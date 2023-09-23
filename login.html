@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Log In form</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="css/stylee.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+    <link rel="stylesheet" href="css/font-awesome.minn.css" type="text/css" media="all">
+
+</head>
+
+<body>
+    <div class="w3l-signinform">
+        <!-- container -->
+        <div class="wrapper">
+            <!-- main content -->
+            <div class="w3l-form-info">
+                <div class="w3_info">
+                    <h1>Welcome Back</h1>
+                    <!-- <p class="sub-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
+                    <h2>Log In</h2>
+                    <form action="php/login.php" method="post">
+                        <div class="input-group">
+                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <input type="email" name="email" placeholder="Email" required="">
+                        </div>
+                        <div class="input-group two-groop">
+                            <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                            <input type="Password" name="password" placeholder="Password" required="">
+                        </div>
+                        <div class="form-row bottom">
+                            <div class="form-check">
+                                <input type="checkbox" id="remenber" name="remenber" value="remenber">
+                                <label for="remenber"> Remember me?</label>
+                            </div>
+                            <a href="#url" class="forgot">Forgot password?</a>
+                        </div>
+                        <button class="btn btn-primary btn-block" name="sub" type="submit">Log In</button>
+                    </form>
+                
+                    <p class="account">Don't have an account? <a href="register.php">Register</a></p>
+                </div>
+            </div>
+            <!-- //main content -->
+        </div>
+        <!-- //container -->
+        <!-- footer -->
+        <div class="footer">
+            <p>&copy;Log In form. All Rights Reserved | </p>
+        </div>
+        <!-- footer -->
+    </div>
+
+</body>
+
+</html>
