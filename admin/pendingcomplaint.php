@@ -56,13 +56,13 @@ include("header.php");
 
                 $data=select_data($sql);
 
-                $n=1;
+                
 
                 while ($row = mysqli_fetch_assoc($data)) {
                   
                   ?>
                   <tr>
-                 <th scope='row'><?php echo $n++; ?></th>
+                 <td><?php echo  $row['complaint_id'] ?></td>
                  <td><?php echo  $row['title'] ?></td>
                  <td> <?php echo $row['description'] ?></td>
                  <td><?php echo $row['type'] ?></td>
@@ -70,7 +70,7 @@ include("header.php");
                  <td> <?php echo $row['email_id']  ?></td>
                  <td>
                       <div class="btn-group">
-                        <a href="php/complaintviewing.php" $id=<?php echo $row['complaint_id']?> class="btn btn-success btn-sm">Reply</a>
+                        <a href="php/complaintviewing.php?id=<?php echo $row['complaint_id'] ?>" class="btn btn-success btn-sm">Reply</a>
                         
                       </div>
                     </td>

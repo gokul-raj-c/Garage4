@@ -63,12 +63,12 @@ include("header.php");
                   
                   ?>
                   <tr>
-                 <th scope='row'><?php echo $n++; ?></th>
+                  <td><?php echo  $row['complaint_id'] ?></td>
                  <td><?php echo  $row['title'] ?></td>
                  <td> <?php echo $row['description'] ?></td>
-                 <td><?php echo $row['priority'] ?></td>
+                 <td><?php echo $row['type'] ?></td>
                  <td><?php echo $row['date']?></td>
-                 <td> <?php echo $row['email']  ?></td>
+                 <td> <?php echo $row['email_id']  ?></td>
                  
                  
                   <?php
