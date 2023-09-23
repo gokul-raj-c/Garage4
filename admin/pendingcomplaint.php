@@ -11,11 +11,12 @@ include("header.php");
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Complaints</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+          <li class="breadcrumb-item">Manage Complaints</a></li>
+          <li class="breadcrumb-item active">Pending Complaints</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -56,13 +57,13 @@ include("header.php");
 
                 $data=select_data($sql);
 
-                
+                $n=1;
 
                 while ($row = mysqli_fetch_assoc($data)) {
                   
                   ?>
                   <tr>
-                 <td><?php echo  $row['complaint_id'] ?></td>
+                  <th scope='row'><?php echo $n++; ?></th>
                  <td><?php echo  $row['title'] ?></td>
                  <td> <?php echo $row['description'] ?></td>
                  <td><?php echo $row['type'] ?></td>
