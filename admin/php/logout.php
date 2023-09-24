@@ -17,7 +17,7 @@ session_start();
  let timerInterval
 Swal.fire({
   icon:'success',
-  title: 'User Loging out!',
+  title: 'Admin Loging out!',
 
   timer: 2000,
   timerProgressBar: true,
