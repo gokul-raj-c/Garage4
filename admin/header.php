@@ -2,7 +2,7 @@
 
 require("../connect.php");
 
-   $username = $_SESSION['email_id'];
+   /*$username = $_SESSION['email_id'];*/
    
    ?>
 
@@ -461,17 +461,17 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Products</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-layout-text-window-reverse"></i><span>Cars</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="addproduct.php">
-              <i class="bi bi-circle"></i><span>Add Products</span>
+            <a href="addcars.php">
+              <i class="bi bi-circle"></i><span>Add Cars</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i class="bi bi-circle"></i><span>Delete Products</span>
+              <i class="bi bi-circle"></i><span>Delete Cars</span>
             </a>
           </li>
         </ul>
@@ -504,6 +504,12 @@ require("../connect.php");
         <a class="nav-link collapsed" href="contact.php">
           <i class="bi bi-telephone"></i>
           <span>Contact</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="viewcar.php">
+          <i class="bi bi-card-list"></i>
+          <span>View Cars</span>
         </a>
       </li><!-- End Contact Page Nav -->
 
