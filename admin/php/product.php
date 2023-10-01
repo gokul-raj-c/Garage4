@@ -14,17 +14,14 @@
         $photo = $_FILES['photo']['name'];
         $carname = $_POST['carname'];
         $carcategory = $_POST['category'];
-        /*$carmodel = $_POST['modelyear'];
-        $carbrand = $_POST['carbrand'];
-        $platenumber = $_POST['platenumber'];*/
         $color = $_POST['color'];
         $capacity = $_POST['capacity'];
         $description = $_POST['description'];
         $amount = $_POST['amount'];
         
 
-        $sql = "INSERT INTO product(image,name,category,color,capacity,description,amount,status)
-         VALUES ('$photo','$carname','$carcategory','$color','$capacity','$description','$amount',0)";
+        $sql = "INSERT INTO product(image,name,category,color,capacity,description,amount)
+         VALUES ('$photo','$carname','$carcategory','$color','$capacity','$description','$amount')";
         insert_data($sql);
 
         $targetDirectory = "../uploads/products/";
@@ -37,7 +34,7 @@
                 icon: 'success',
                 title: 'Product Added',
             }).then((result) => {
-                window.location.replace('../index.php');
+                window.location.replace('../viewcar.php');
             })
         </script>
 

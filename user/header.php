@@ -55,7 +55,7 @@ require("../connect.php");
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.php" class="logo d-flex align-items-center">
+      <a href="viewcar.php" class="logo d-flex align-items-center">
         <!--<img src="assets/img/logo1.png" alt="">-->
         <span class="d-none d-lg-block">GARAGE4</span>
       </a>
@@ -285,9 +285,9 @@ require("../connect.php");
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.php">
+        <a class="nav-link collapsed" href="viewcar.php">
           <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+          <span>Home</span>
         </a>
       </li><!-- End Dashboard Nav 
 
@@ -488,9 +488,9 @@ require("../connect.php");
       </li><!-- End Contact Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+        <a class="nav-link collapsed" href="bookcar.php">
           <i class="bi bi-card-list"></i>
-          <span>Booking</span>
+          <span>My Bookings</span>
         </a>
       </li><!-- End Register Page Nav -->
 

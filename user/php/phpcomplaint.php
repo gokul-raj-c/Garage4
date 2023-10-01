@@ -23,7 +23,7 @@ insert_data($sql);
             icon: 'success',
             text: 'Complaint Submitted !!!',
             didClose: () => {
-              window.location.replace('../index.php');
+              window.location.replace('../viewcar.php');
             }
           });
         </script>

@@ -19,7 +19,7 @@ include("header.php");
       <h1>Cars</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
           <li class="breadcrumb-item">Cars</li>
           <li class="breadcrumb-item active">Add Cars</li>
         </ol>
@@ -88,14 +88,14 @@ include("header.php");
                   <div class="col-sm-10">
                     <input type="text" class="form-control" id="modelyear" name="modelyear" required="">
                   </div>
-                </div>-
+                </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Brand</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control" id="carbrand" name="carbrand" required="">
                   </div>
                 </div>
-                <!--<div class="row mb-3">
+                <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Plate Number</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control" id="platenumber" name="platenumber" required="">

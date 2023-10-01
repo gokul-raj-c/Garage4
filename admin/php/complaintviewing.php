@@ -22,7 +22,7 @@ update_data($sql);
               icon: 'success',
               text: 'Complaint Viewed',
               didClose: () => {
-                window.location.replace('../index.php');
+                window.location.replace('../activeuser.php');
               }
             });
           </script>

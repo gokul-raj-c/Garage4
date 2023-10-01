@@ -37,7 +37,7 @@ if (isset($_POST['sub'])) {
                                 icon: 'success',
                                 text: 'Welcome Back',
                                 didClose: () => {
-                                window.location.replace('../admin/index.php');
+                                window.location.replace('../admin/activeuser.php');
                                 }
                                 });
                         </script>
@@ -50,7 +50,7 @@ if (isset($_POST['sub'])) {
                                 icon: 'success',
                                 text: 'Welcome Back',
                                 didClose: () => {
-                                window.location.replace('../user/index.php');
+                                window.location.replace('../user/viewcar.php');
                                 }
                                 });
                         </script>
