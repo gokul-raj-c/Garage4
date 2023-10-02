@@ -34,7 +34,7 @@ Swal.fire({
 }).then((result) => {
   /* Read more about handling dismissals below */
   if (result.dismiss === Swal.DismissReason.timer) {
-    window.location.replace('../../login.html');
+    window.location.replace('../../index.html');
 
   }
 });
