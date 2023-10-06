@@ -31,8 +31,7 @@ include("header.php");
 
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-              <img src="assets/img/profileimg.jpg" alt="Profile" class="rounded-circle">
+              <img  src="assets/img/profileimg.jpg"  alt="Profile-image" class="rounded-circle">
               <h2><?php echo $arr['first_name'];?> <?php echo $arr['last_name'];?></h2>
               <!--<h3>Web Designer</h3>
               <div class="social-links mt-2">
@@ -61,8 +60,8 @@ include("header.php");
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
                 </li>
 
-               <!-- <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
+               <!--<li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Profile Photo</button>
                 </li>-->
 
                 <li class="nav-item">
@@ -211,41 +210,18 @@ include("header.php");
 
                 <div class="tab-pane fade pt-3" id="profile-settings">
 
-                  <!-- Settings Form -->
-                  <form>
+                  <!-- Settings Form --
+                  <form method="POST" action="php/profile_pic.php" role="form" enctype="multipart/form-data" onsubmit="return check()">
 
                     <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email Notifications</label>
-                      <div class="col-md-8 col-lg-9">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="changesMade" checked>
-                          <label class="form-check-label" for="changesMade">
-                            Changes made to your account
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="newProducts" checked>
-                          <label class="form-check-label" for="newProducts">
-                            Information on new products and services
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="proOffers">
-                          <label class="form-check-label" for="proOffers">
-                            Marketing and promo offers
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="securityNotify" checked disabled>
-                          <label class="form-check-label" for="securityNotify">
-                            Security alerts
-                          </label>
-                        </div>
-                      </div>
-                    </div>
+                  
+                  <label for="inputNumber" class="col-sm-2 col-form-label">Photo Upload</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="file" id="photo" name="photo" required="">
+                  </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <button type="submit" name="submit" class="btn btn-primary">Save Changes</button>
                     </div>
                   </form><!-- End settings Form -->
 

@@ -91,13 +91,13 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputDate" class="col-sm-2 col-form-label">No Of Days For Rent</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="noofdays" id="noofdays">
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputDate" class="col-sm-2 col-form-label">Drop Date</label>
                   <div class="col-sm-10">
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" name="dropdate" id="dropdate">
                   </div>
                 </div>
                 <!--<div class="row mb-3">

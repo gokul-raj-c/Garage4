@@ -37,7 +37,7 @@ require("../connect.php");
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/styleee.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
@@ -58,7 +58,7 @@ require("../connect.php");
         <span class="d-none d-lg-block">GARAGE4</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
+    </div><!-- End Logo --
 
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">

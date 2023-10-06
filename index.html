@@ -41,10 +41,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li><a href="login.html" class="page-scroll"><span data-hover="Login">Login</span></a></li>
 				<li><a href="register.php" class="page-scroll"><span data-hover="Register">Register</span></a></li>
 				<li><a href="#about" class="page-scroll"><span data-hover="About">About</span></a></li>
-				<!-- <li><a href="#service" class="page-scroll"><span data-hover="Services">Services</span></a></li> -->
+			  <!--<li><a href="#address" class="page-scroll"><span data-hover="address">Address</span></a></li> -->
 				<li><a href="#portfolio" class="page-scroll"><span data-hover="Portfolio">Portfolio</span></a></li>
 				<!-- <li><a href="#work" class="page-scroll"><span data-hover="Work">Work</span></a></li> -->
-				<li><a href="#contact" class="page-scroll"><span data-hover="Contact">Contact</span></a></li>
+				<li><a href="#contact" class="page-scroll"><span data-hover="Review">Review</span></a></li>
 			</ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -530,14 +530,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- contact section -->
 <section class="contact-w3l" id="contact">
 	<div class="container">
-		<h3 class="text-center">Our Contacts</h3>
+		<h3 class="text-center">Review</h3>
 		<p class="text-center"></p>
-		<form action="#" method="post" name="sentMessage" id="contactForm" novalidate>
+		<form action="php/review.php" method="POST" name="sentMessage" id="contactForm" novalidate>
             <div class="col-lg-4 col-md-4 col-sm-4">    
 				<div class="control-group form-group">
                     <div class="controls">
                         <label>Full Name:</label>
-                        <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                        <input type="text" class="form-control" name="name" id="name" required data-validation-required-message="Please enter your name.">
                         <p class="help-block"></p>
                     </div>
 				</div>
@@ -546,7 +546,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="control-group form-group">
 					<div class="controls">
                         <label>Phone Number:</label>
-						<input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+						<input type="tel" class="form-control" name="number" id="phone" required data-validation-required-message="Please enter your phone number.">
                     </div>
                 </div>
 			</div>
@@ -554,25 +554,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>Email Address:</label>
-                        <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                        <input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Please enter your email address.">
                     </div>
                 </div>
 			</div>
-			<div class="clearfix"></div>
+			<!--<div class="clearfix"></div>-->
 			<div class="col-lg-12">	
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>Message:</label>
-                        <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                        <textarea rows="10" cols="100" class="form-control" name="message" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
 					</div>
                 </div>
-                <div id="success"></div>
+                <!--<div id="success"></div>
                 <!-- For success/fail messages -->
 			</div>
 			<div class="col-lg-12">	
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit" name="submit" class="btn btn-primary">Send Message</button>
             </div>
-			<div class="clearfix"></div>	
+			<!--<div class="clearfix"></div>-->	
 		</form>	
 	</div>
 </section>

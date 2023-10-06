@@ -29,7 +29,7 @@ $username = $_SESSION['email_id'];
             $res = select_data($sql);
             while ($row = mysqli_fetch_assoc($res)) {
             ?>
-                <div class="col-md-3" style="margin:0px;display: inline-block;">
+                <div class="col-md-4" style="margin:0px;display: inline-block;">
                     <div class="card">
                         <img class="card-img-top" src="./uploads/products/<?php echo $row['image']; ?>" alt="Card image cap" style="height: 300px;">
                         <!--<div class="card-header">
@@ -42,11 +42,16 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Capacity:</b> <?php echo $row['capacity']; ?></p>
                             <p class="card-text"><b>Description:</b> <?php echo $row['description']; ?></p>
                             <p class="card-text"><b>Rate:</b> <?php echo $row['amount']; ?> :Per Day    </p>
-                            <!--<p>
+                            <p>
                       <div class="btn-group">
-                        <a class="btn btn-success btn-lg">Update</a>
+                        <a class="btn btn-success btn">Update</a>
                         
-                      </div></p>-->
+                      </div>
+                      <div class="btn-group">
+                        <a class="btn btn-danger btn">Delete</a>
+                        
+                      </div></p>
+
 
                         </div>
                         <!--<div class="card-footer text-muted">
