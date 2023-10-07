@@ -12,18 +12,17 @@
 require '../../connect.php';
 /*session_start();
 $email=$_SESSION['email_id'];*/
-$id=$_POST['complaint_id'];
-$message=$_POST['message'];
-$v=1;
-$sql="update complaint set reply='$v',message='$message' where complaint_id='$id' ";
+$id=$_GET['id'];
+/*$message=$_POST['message'];*/
+$sql="DELETE FROM `product`WHERE product_id='$id' ";
 update_data($sql);
 ?>
  <script>
             Swal.fire({
               icon: 'success',
-              text: 'Complaint Viewed',
+              text: 'Product Deleted',
               didClose: () => {
-                window.location.replace('../activeuser.php');
+                window.location.replace('../viewcar.php');
               }
             });
           </script>

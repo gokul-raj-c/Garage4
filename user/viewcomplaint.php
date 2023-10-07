@@ -48,6 +48,7 @@ include("header.php");
                     <th scope="col">Type</th>
                     <th scope="col">Date</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Reply</th>
                 
                   </tr>
                 </thead>
@@ -71,6 +72,7 @@ include("header.php");
                  <td><?php echo $row['type'] ?></td>
                  <td><?php echo $row['date']?></td>
                  <td> <?php echo $row['email_id']  ?></td>
+                 <td> <?php echo $row['message']  ?></td>
                  
                  
                   <?php

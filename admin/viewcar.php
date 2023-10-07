@@ -44,11 +44,11 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Rate:</b> <?php echo $row['amount']; ?> :Per Day    </p>
                             <p>
                       <div class="btn-group">
-                        <a class="btn btn-success btn">Update</a>
+                      <a href="carupdate.php?id=<?php echo $row['product_id'] ?>" class="btn btn-success btn">Update</a>
                         
                       </div>
                       <div class="btn-group">
-                        <a class="btn btn-danger btn">Delete</a>
+                      <a href="php/deletecar.php?id=<?php echo $row['product_id'] ?>" class="btn btn-danger btn">Delete</a>
                         
                       </div></p>
 

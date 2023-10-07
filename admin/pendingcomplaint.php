@@ -71,7 +71,7 @@ include("header.php");
                  <td> <?php echo $row['email_id']  ?></td>
                  <td>
                       <div class="btn-group">
-                        <a href="php/complaintviewing.php?id=<?php echo $row['complaint_id'] ?>" class="btn btn-success btn-sm">Reply</a>
+                        <a href="replay.php?id=<?php echo $row['complaint_id'] ?>" class="btn btn-success btn-sm">Reply</a>
                         
                       </div>
                     </td>

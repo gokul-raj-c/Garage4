@@ -17,7 +17,7 @@ require("../connect.php");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <title>GARAGE4</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -39,7 +39,7 @@ require("../connect.php");
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/styleee.css" rel="stylesheet">
+  <link href="assets/css/styleeee.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
@@ -223,7 +223,7 @@ require("../connect.php");
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profileimg.jpg" alt="Profile" class="rounded-circle">
+            <img src="assets/img/default.jpg" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2"><h5><?php echo $arr['first_name'] . " " . $arr['last_name']; ?></h5></span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -266,7 +266,7 @@ require("../connect.php");
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="./php/logout.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Log Out</span>
               </a>
@@ -500,7 +500,7 @@ require("../connect.php");
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Log Out</span>
         </a>
-      </li><!-- End Login Page Nav -->
+      </li><!-- End Login Page Nav --
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="turf_view.php">
