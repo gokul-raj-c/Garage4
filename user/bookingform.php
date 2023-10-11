@@ -45,7 +45,13 @@ $id=$_GET['id'];
               <h5 class="card-title">Enter Details Here</h5>
 
               <!-- General Form Elements -->
-              <form action="#" method="POST">
+              <form action="./php/booking.php" method="POST">
+              <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Car Id</label>
+                  <div class="col-sm-10">
+                  <input name="carid" type="text" class="form-control" id="carid" value=<?php echo $arr['product_id'];?>>
+                  </div>
+                </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Name</label>
                   <div class="col-sm-10">
@@ -76,12 +82,12 @@ $id=$_GET['id'];
                   <input name="carrate" type="text" class="form-control" id="carrate" value=<?php echo $arr['amount'];?>>
                   </div>
                 </div>
-                <div class="row mb-3">
+                <!--<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">User Name</label>
                   <div class="col-sm-10">
-                  <input name="username" type="text" class="form-control" id="username" value= <?php echo $arr1['first_name'];?>>
+                  <input name="username" type="text" class="form-control" id="username" value=
                   </div>
-                </div>
+                </div>-->
                 <div class="row mb-3">
                   <label for="inputEmail" class="col-sm-2 col-form-label">User Email</label>
                   <div class="col-sm-10">
@@ -95,6 +101,12 @@ $id=$_GET['id'];
                   </div>
                 </div>
                 <div class="row mb-3">
+                  <label for="inputDate" class="col-sm-2 col-form-label">PicUp Date</label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" name="pickupdate" id="picupdate">
+                  </div>
+                </div>
+                <div class="row mb-3">
                   <label for="inputDate" class="col-sm-2 col-form-label">Drop Date</label>
                   <div class="col-sm-10">
                     <input type="date" class="form-control" name="dropdate" id="dropdate">
@@ -105,7 +117,7 @@ $id=$_GET['id'];
                   <div class="col-sm-10">
                     <input type="time" class="form-control">
                   </div>
-                </div>-->
+                </div>--
                 <div class="row mb-3">
                   <label for="inputNumber" class="col-sm-2 col-form-label">Identity Proof</label>
                   <div class="col-sm-10">
@@ -204,6 +216,10 @@ $id=$_GET['id'];
                   <div class="col-sm-10">
                     <button type="submit" name="submit" class="btn btn-primary">Book Now</button>
                   </div>
+                  <!--<div class="btn-group">
+                        <a href="php/booking.php?id=<?php echo $row['car_id'] ?>" class="btn btn-success btn-sm">Book Now</a>
+                        
+                      </div>-->
                 </div>
 
               </form><!-- End General Form Elements -->
