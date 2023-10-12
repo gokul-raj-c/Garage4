@@ -10,6 +10,7 @@
 
 <?php
 session_start();
+$id=$_GET['id'];
 require("../../connect.php");
 if(isset($_POST["submit"])){
 
@@ -18,7 +19,7 @@ if(isset($_POST["submit"])){
     $color=$_POST['carcolor'];
     $capacity=$_POST['carcapacity'];
     $rate=$_POST['carrate'];
-    $id=$_POST['carid'];
+
     $email=$_POST['useremail'];
     $days=$_POST['noofdays'];
     $bdate=date("Y-m-d"); 
@@ -37,7 +38,7 @@ if(isset($_POST["submit"])){
                 icon: 'success',
                 text: 'Proceeding To Payment',
                 didClose: () => {
-                  window.location.replace('../payment1.php');
+                  window.location.replace('../booking.php');
                 }
               });
             </script>

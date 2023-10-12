@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2023 at 11:59 AM
+-- Generation Time: Oct 12, 2023 at 07:25 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,12 +24,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `booking_id` int(11) NOT NULL,
+  `carname` varchar(60) NOT NULL,
+  `category` varchar(40) NOT NULL,
+  `color` varchar(40) NOT NULL,
+  `capacity` varchar(40) NOT NULL,
+  `rate` varchar(40) NOT NULL,
+  `car_id` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `days` varchar(40) NOT NULL,
+  `bdate` date NOT NULL,
+  `pick` date NOT NULL,
+  `dropd` date NOT NULL,
+  `total` varchar(40) NOT NULL,
+  `status` int(11) NOT NULL,
+  `payment` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`booking_id`, `carname`, `category`, `color`, `capacity`, `rate`, `car_id`, `email`, `days`, `bdate`, `pick`, `dropd`, `total`, `status`, `payment`) VALUES
+(12, 'Polo', 'Other', 'Black', '4', '4000', '17', 'moncy@gmail.com', '3', '2023-10-12', '2023-10-23', '2023-10-25', '12000', 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `car_photo`
 --
 
 CREATE TABLE `car_photo` (
   `image_id` int(11) NOT NULL,
-  `car_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `image` varchar(50) NOT NULL DEFAULT 'default.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -37,7 +68,7 @@ CREATE TABLE `car_photo` (
 -- Dumping data for table `car_photo`
 --
 
-INSERT INTO `car_photo` (`image_id`, `car_id`, `image`) VALUES
+INSERT INTO `car_photo` (`image_id`, `user_id`, `image`) VALUES
 (4, 12, 'OIP.jpeg'),
 (5, 12, 'download.jpeg'),
 (6, 12, 'download (1).jpeg');
@@ -55,21 +86,16 @@ CREATE TABLE `complaint` (
   `type` varchar(10) NOT NULL,
   `date` date NOT NULL,
   `email_id` varchar(50) NOT NULL,
-  `reply` varchar(10) NOT NULL
+  `reply` varchar(10) NOT NULL,
+  `message` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `complaint`
 --
 
-INSERT INTO `complaint` (`complaint_id`, `title`, `description`, `type`, `date`, `email_id`, `reply`) VALUES
-(1, 'complaint', 'uuuuu', 'medium', '2023-09-22', 'moncy@gmail.com', '1'),
-(2, 'complaint', 'ttrtgdg', 'low', '2023-09-22', 'moncy@gmail.com', '1'),
-(3, 'complaint', 'heee', 'low', '2023-09-22', 'moncy@gmail.com', '1'),
-(4, 'tttttt', 'vdsgeth', 'website', '2023-09-22', 'moncy@gmail.com', '1'),
-(5, 'hfhfhfh', 'hfgfgkewfgu', 'car', '2023-09-23', 'abcd@gmail.com', '0'),
-(6, 'tttttt', 'not working', 'website', '2023-09-23', 'gourirajc@gmail.com', '1'),
-(7, '', '', '', '2023-09-30', 'moncy@gmail.com', '0');
+INSERT INTO `complaint` (`complaint_id`, `title`, `description`, `type`, `date`, `email_id`, `reply`, `message`) VALUES
+(10, 'Website Performance', 'It is Not Working Properly', 'website', '2023-10-07', 'moncy@gmail.com', '1', 'We Will Fix It Soon');
 
 -- --------------------------------------------------------
 
@@ -155,9 +181,10 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `image`, `name`, `category`, `model_year`, `brand`, `plate_number`, `color`, `capacity`, `description`, `amount`, `status`) VALUES
-(13, 'p3.jpg', 'Audi', 'Premium', '', '', '', 'Blue', '2', 'Well Maintained', '6000', 0),
-(14, 'p4.jpg', 'Mini Cooper', 'Premium', '', '', '', 'Grey', '2', 'Well Maintained', '5000', 0),
-(15, 'p1.jpg', 'Benz', 'Premium', '', '', '', 'Black', '4', 'Well Maintained', '5000', 0);
+(13, 'p3.jpg', 'Audi', 'Premium', '', '', '', 'Blue', '4', 'Maintained', '7000', 0),
+(14, 'p4.jpg', 'Mini Cooper', 'Premium', '', '', '', 'Grey', '2', 'Maintained', '8000', 0),
+(17, 'n5.jpg', 'Polo', 'Other', '', '', '', 'Black', '4', 'Maintained', '4000', 0),
+(18, 'nn1.jpg', 'Swift', 'Other', '', '', '', 'White', '4', 'Maintained', '4000', 0);
 
 -- --------------------------------------------------------
 
@@ -166,6 +193,7 @@ INSERT INTO `product` (`product_id`, `image`, `name`, `category`, `model_year`, 
 --
 
 CREATE TABLE `registration` (
+  `profile_image` varchar(50) NOT NULL DEFAULT 'default.jpg',
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
   `contact` varchar(20) NOT NULL,
@@ -182,18 +210,38 @@ CREATE TABLE `registration` (
 -- Dumping data for table `registration`
 --
 
-INSERT INTO `registration` (`first_name`, `last_name`, `contact`, `email_id`, `date_of_birth`, `house_name`, `street_name`, `district`, `pincode`, `state`) VALUES
-('ududu', 'jddiju', '5588226699', 'abc@gmail.com', '2004-09-06', 'eee', 'ffff', 'wayanad', '656987', 'kerala'),
-('ududu', 'jddiju', 'ttrtrtrt', 'abcd@gmail.com', '2023-09-13', 'eee', 'ffff', 'Palakkad', '656987', 'kerala'),
-('basil', 'k reji', '5588226699', 'basilkreji@gmail.com', '2023-09-07', 'cccc', 'yyyyy', 'Ernakulam', '686667', 'kerala'),
-('Eldho', 'Wilson', '9074288916', 'eldhowilson@gmail.com', '2003-04-22', 'Chakkalackal', 'Pampakkuda', 'Ernakulam', '686667', 'Kerala'),
-('Gokul', 'Raj', '9061393951', 'gokulrajc63@gmail.com', '2003-04-11', 'Chavarukulangara(H)', 'Periyappuram', 'Ernakulam', '686667', 'Kerala'),
-('Gouri', 'Raj', '6235273701', 'gourirajc@gmail.com', '2006-06-06', 'Chavarukulangara', 'Periyappuram', 'Ernakulam', '686667', 'Kerala'),
-('moncy', 'francis', '8945214788', 'moncy@gmail.com', '2003-09-11', 'moncyy', 'Muvattupuzha', 'Ernakulam', '687543', 'kerala');
+INSERT INTO `registration` (`profile_image`, `first_name`, `last_name`, `contact`, `email_id`, `date_of_birth`, `house_name`, `street_name`, `district`, `pincode`, `state`) VALUES
+('default', 'basil', 'k reji', '5588226699', 'basilkreji@gmail.com', '2023-09-07', 'cccc', 'yyyyy', 'Ernakulam', '686667', 'kerala'),
+('default', 'Eldho', 'Wilson', '9074288916', 'eldhowilson@gmail.com', '2003-04-22', 'Chakkalackal', 'Pampakkuda', 'Ernakulam', '686667', 'Kerala'),
+('gokulrajc63gmailcom.jpg', 'Gokul', 'Raj', '9061393951', 'gokulrajc63@gmail.com', '2003-04-11', 'Chavarukulangara(H)', 'Periyappuram', 'Ernakulam', '686667', 'Kerala'),
+('default', 'Gouri', 'Raj', '6235273701', 'gourirajc@gmail.com', '2006-06-06', 'Chavarukulangara', 'Periyappuram', 'Ernakulam', '686667', 'Kerala'),
+('default', 'Moncy', 'Francis', '8945214788', 'moncy@gmail.com', '2003-09-11', 'moncyy', 'Muvattupuzha', 'Ernakulam', '687543', 'kerala');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `website_review`
+--
+
+CREATE TABLE `website_review` (
+  `review_id` int(11) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `phone_no` varchar(20) NOT NULL,
+  `email_id` varchar(40) NOT NULL,
+  `message` varchar(100) NOT NULL,
+  `date` date NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`booking_id`);
 
 --
 -- Indexes for table `car_photo`
@@ -232,8 +280,20 @@ ALTER TABLE `registration`
   ADD PRIMARY KEY (`email_id`);
 
 --
+-- Indexes for table `website_review`
+--
+ALTER TABLE `website_review`
+  ADD PRIMARY KEY (`review_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `car_photo`
@@ -245,7 +305,7 @@ ALTER TABLE `car_photo`
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `complaint_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `complaint_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -257,7 +317,13 @@ ALTER TABLE `district`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `website_review`
+--
+ALTER TABLE `website_review`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

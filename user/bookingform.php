@@ -45,13 +45,13 @@ $id=$_GET['id'];
               <h5 class="card-title">Enter Details Here</h5>
 
               <!-- General Form Elements -->
-              <form action="./php/booking.php" method="POST">
-              <div class="row mb-3">
+              <form action="./php/booking.php?id=<?php echo $arr['product_id'] ?>" method="POST">
+              <!--<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Id</label>
                   <div class="col-sm-10">
                   <input name="carid" type="text" class="form-control" id="carid" value=<?php echo $arr['product_id'];?>>
                   </div>
-                </div>
+                </div>-->
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Name</label>
                   <div class="col-sm-10">
@@ -217,7 +217,7 @@ $id=$_GET['id'];
                     <button type="submit" name="submit" class="btn btn-primary">Book Now</button>
                   </div>
                   <!--<div class="btn-group">
-                        <a href="php/booking.php?id=<?php echo $row['car_id'] ?>" class="btn btn-success btn-sm">Book Now</a>
+                        <a href="php/booking.php?id= class="btn btn-success btn-sm">Book Now</a>
                         
                       </div>-->
                 </div>
