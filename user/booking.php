@@ -95,7 +95,7 @@ $username = $_SESSION['email_id'];
             "amount": amt *
                 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
-            "name": "The Sports Hub",
+            "name": "GARAGE 4",
             "description": "Payment",
             "image": "../images/ftbllogo.webp",
             //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1

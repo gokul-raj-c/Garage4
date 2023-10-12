@@ -7,7 +7,7 @@ $username = $_SESSION['email_id'];
    $res=select_data($sql);
    $arr=mysqli_fetch_assoc($res);
 
-   $id=$_GET['id'];
+   
    
 ?>
 
