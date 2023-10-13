@@ -13,7 +13,7 @@
     if (isset($_GET['amt'])) {
         $email = $_SESSION['email_id'];
         $amt = $_GET['amt'];
-        $bid = $_SESSION['booking_id'];
+        $bid = $_GET['id'];
         $date = date('Y-m-d H:i:s');
 
 
@@ -26,13 +26,13 @@
         $res = select_data($sql);
 
         while ($row = mysqli_fetch_assoc($res)) {
-            $product_id = $row['product_id'];
+            $product_id = $row['booking_id'];
             /*$quantity = $row['quantity'];*/
             /*$sql2 = "insert into pro_order (email_id,product_id,order_date,quantity,payment_id) values ('$email','$product_id','$date','$quantity','$pay_id')";
             insert($sql2);*/
 
-            $sql3 = "UPDATE booking SET status=0 WHERE booking_id='$product_id'";
-            update($sql3);
+            $sql3 = "UPDATE booking SET status=1 WHERE booking_id='$product_id'";
+            update_data($sql3);
         }
 
 
@@ -45,7 +45,7 @@
     <script>
     Swal.fire({
         icon: 'success',
-        title: 'Order Placed Successfully!',
+        title: 'Booking Successfully!',
     }).then((result) => {
         window.location.replace('../viewcar.php');
     })
