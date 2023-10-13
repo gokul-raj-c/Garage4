@@ -1,13 +1,13 @@
 
  <?php 
  session_start();
- if($_SESSION['status']!="Active")
+ /*if($_SESSION['status']!="Active")
 {
     header("location:../Homepage/home.php");
 }
 
                         require_once("../db.class.php");
-                        $ob=new db_operations();
+                        $ob=new db_operations();*/
  ?>
 <!DOCTYPE html>
 <html>

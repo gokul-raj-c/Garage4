@@ -3,7 +3,8 @@ session_start();
 include("header.php");
 
 $username = $_SESSION['email_id'];
-   $sql="select * from booking where email='$username'" ;
+$bbid=$_GET['id'];
+   $sql="select * from booking where car_id='$bbid'" ;
    $res=select_data($sql);
    $arr=mysqli_fetch_assoc($res);
 
@@ -29,6 +30,8 @@ $username = $_SESSION['email_id'];
             $crid=$arr['car_id'];
             $sql1 = "select * from product where product_id=$crid";
             $res1 = select_data($sql1);
+            $total=$arr['total'];
+            $bid=$arr['booking_id'];
             while ($row1 = mysqli_fetch_assoc($res1))
             {
             ?>
@@ -46,14 +49,11 @@ $username = $_SESSION['email_id'];
                            
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
                             <p>
-                      <div class="btn-group">
-                      <!--<a href="carupdate.php?id= class="btn btn-success btn">Update</a>-->
-                      <td>
-                                    <button type="button" class="btn btn-success" onclick="pay(<?php echo $total ?>)">
-                                        Book Now <span class="fa fa-play"></span>
+                            <div class="btn-group">
+                            <button type="button" class="btn btn-success" onclick="pay(<?php echo $total?>)">
+                                        Buy Now <span class="fa fa-play"></span>
                                     </button>
-                                </td>  
-                      </div>
+            </div>
                       <div class="btn-group">
                       <a href="php/deletecar.php?id=<?php echo $row['product_id'] ?>" class="btn btn-danger btn">Delete</a>
                         
@@ -86,7 +86,7 @@ $username = $_SESSION['email_id'];
     function pay(amt) {
         <?php
             $sql = "select * from registration where email_id='$username'";
-            $res = sel($sql);
+            $res = select_data($sql);
             $row = mysqli_fetch_assoc($res);
 
             ?>
@@ -95,11 +95,11 @@ $username = $_SESSION['email_id'];
             "amount": amt *
                 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
-            "name": "GARAGE 4",
+            "name": "GARAGE4",
             "description": "Payment",
-            "image": "../images/ftbllogo.webp",
+            
             //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            "callback_url": "php/success.php?amt=" + amt,
+            "callback_url": "./php/success.php?amt=" + amt,
             "prefill": {
                 "name": "<?php echo $row['first_name'] . ' ' . $row['last_name'] ?>",
                 "email": "<?php echo $row['email_id'] ?>",

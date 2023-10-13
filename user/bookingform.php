@@ -49,7 +49,7 @@ $id=$_GET['id'];
               <!--<div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Id</label>
                   <div class="col-sm-10">
-                  <input name="carid" type="text" class="form-control" id="carid" value=<?php echo $arr['product_id'];?>>
+                  <input name="carid" type="text" class="form-control" id="carid" value=
                   </div>
                 </div>-->
                 <div class="row mb-3">

@@ -38,7 +38,7 @@ if(isset($_POST["submit"])){
                 icon: 'success',
                 text: 'Proceeding To Payment',
                 didClose: () => {
-                  window.location.replace('../booking.php');
+                  window.location.replace('../booking.php?id=<?php echo $id ?>');
                 }
               });
             </script>

@@ -1,5 +1,6 @@
 <?php 
  session_start();
+
  if($_SESSION['status']!="Active")
 {
     header("location:../Homepage/home.php");
@@ -13,7 +14,7 @@
 </head>
 <body background="images/1.png">
 <?php 
-$order=$_SESSION['oid'];
+
 ?>
 
 <br>

@@ -7,10 +7,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
  <?php 
  session_start();
- if($_SESSION['status']!="Active")
+ /*if($_SESSION['status']!="Active")
 {
     header("location:../Homepage/home.php");
-}
+}*/
+$id=$_GET['id'];
  ?>
 <!DOCTYPE html>
 <html>
