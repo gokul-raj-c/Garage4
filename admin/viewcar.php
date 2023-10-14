@@ -25,7 +25,7 @@ $username = $_SESSION['email_id'];
     </div>
 
             <?php
-            $sql = "select * from product";
+            $sql = "select * from product WHERE status='0'";
             $res = select_data($sql);
             while ($row = mysqli_fetch_assoc($res)) {
             ?>

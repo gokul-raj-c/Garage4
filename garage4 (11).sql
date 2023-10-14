@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2023 at 07:25 PM
+-- Generation Time: Oct 14, 2023 at 11:56 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -50,7 +50,8 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `carname`, `category`, `color`, `capacity`, `rate`, `car_id`, `email`, `days`, `bdate`, `pick`, `dropd`, `total`, `status`, `payment`) VALUES
-(12, 'Polo', 'Other', 'Black', '4', '4000', '17', 'moncy@gmail.com', '3', '2023-10-12', '2023-10-23', '2023-10-25', '12000', 0, 0);
+(44, 'Benz', 'Premium', 'Black', '4', '5500', '19', 'moncy@gmail.com', '3', '2023-10-14', '2023-10-24', '2023-10-26', '16500', 1, 0),
+(46, 'Polo', 'Other', 'Black', '4', '4000', '17', 'gokulrajc63@gmail.com', '3', '2023-10-14', '2023-10-25', '2023-10-27', '12000', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -158,6 +159,27 @@ INSERT INTO `login` (`email_id`, `password`, `user_type`, `user_status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `payment_id` int(11) NOT NULL,
+  `booking_id` varchar(20) NOT NULL,
+  `amount` varchar(30) NOT NULL,
+  `paid_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`payment_id`, `booking_id`, `amount`, `paid_date`) VALUES
+(11, '44', '16500', '2023-10-14 00:00:00'),
+(12, '46', '12000', '2023-10-14 08:47:03');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
@@ -183,8 +205,9 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`product_id`, `image`, `name`, `category`, `model_year`, `brand`, `plate_number`, `color`, `capacity`, `description`, `amount`, `status`) VALUES
 (13, 'p3.jpg', 'Audi', 'Premium', '', '', '', 'Blue', '4', 'Maintained', '7000', 0),
 (14, 'p4.jpg', 'Mini Cooper', 'Premium', '', '', '', 'Grey', '2', 'Maintained', '8000', 0),
-(17, 'n5.jpg', 'Polo', 'Other', '', '', '', 'Black', '4', 'Maintained', '4000', 0),
-(18, 'nn1.jpg', 'Swift', 'Other', '', '', '', 'White', '4', 'Maintained', '4000', 0);
+(17, 'n5.jpg', 'Polo', 'Other', '', '', '', 'Black', '4', 'Maintained', '4000', 1),
+(18, 'nn1.jpg', 'Swift', 'Other', '', '', '', 'White', '4', 'Maintained', '4000', 0),
+(19, 'p1.jpg', 'Benz', 'Premium', '', '', '', 'Black', '4', 'Well Maintained', '5500', 1);
 
 -- --------------------------------------------------------
 
@@ -268,6 +291,12 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`email_id`);
 
 --
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`payment_id`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -293,7 +322,7 @@ ALTER TABLE `website_review`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `car_photo`
@@ -314,10 +343,16 @@ ALTER TABLE `district`
   MODIFY `district_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `website_review`

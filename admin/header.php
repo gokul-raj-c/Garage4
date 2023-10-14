@@ -37,7 +37,7 @@ require("../connect.php");
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/styleee.css" rel="stylesheet">
+  <link href="assets/css/styleeee.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
@@ -220,7 +220,7 @@ require("../connect.php");
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profileimg.jpg" alt="Profile" class="rounded-circle">
+            <img src="assets/img/default.jpg" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2"><h5>Admin</h5></span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -522,7 +522,7 @@ require("../connect.php");
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-card-list"></i>
-          <span>Booking</span>
+          <span>Bookings</span>
         </a>
       </li><!-- End Register Page Nav -->
 

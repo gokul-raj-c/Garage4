@@ -25,7 +25,7 @@ $username = $_SESSION['email_id'];
     </div>
 
             <?php
-            $sql = "select * from product";
+            $sql = "select * from product WHERE status='0'";
             $res = select_data($sql);
             while ($row = mysqli_fetch_assoc($res)) {
             ?>
@@ -44,7 +44,7 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Rate:</b> <?php echo $row['amount']; ?> :Per Day    </p>
                             <p>
                       <div class="btn-group">
-                      <a href="./bookingform.php?id=<?php echo $row['product_id'] ?>" class="btn btn-success btn">Book</a>
+                      <a href="./bookingform.php?id=<?php echo $row['product_id'] ?>" class="btn btn-success btn">Book Now</a>
                         
                       </div></p>
 

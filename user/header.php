@@ -489,7 +489,7 @@ require("../connect.php");
       </li><!-- End Contact Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="bookcar.php">
+        <a class="nav-link collapsed" href="mybookings.php">
           <i class="bi bi-card-list"></i>
           <span>My Bookings</span>
         </a>

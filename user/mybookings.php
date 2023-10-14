@@ -2,146 +2,80 @@
 session_start();
 include("header.php");
 
+$username = $_SESSION['email_id'];
 
-
-   
-   $username = $_SESSION['email_id'];
    $sql="select * from booking where email='$username'" ;
    $res=select_data($sql);
    $arr=mysqli_fetch_assoc($res);
+
+   $total=$arr['total'];
+   
 ?>
 
-  <main id="main" class="main">
+<main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Cars</h1>
       <nav>
-      <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="viewcar.php">Home</a></li>
-          <li class="breadcrumb-item">Booking</li>
-          <li class="breadcrumb-item active">My Bookings</li>
-      </ol>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
+          <!--<li class="breadcrumb-item">Components</li>
+          <li class="breadcrumb-item active">Cars</li>-->
+        </ol>
       </nav>
-    </div><!-- End Page Title -->
+    </div>
 
-    <div class="card"> 
-          <div class="card-body"> 
-            <h5 class="card-title"> 
-            Booking Details
-            </h5>
-
-            <section id="main-content">
-    <section class="wrapper">
-        <div class="container typo-agile">
-            <div class="row">
-                <div class="col-sm-12">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Car Name</th>
-                                <th>Category</th>
-                                <th>User Email</th>
-                                <th class="text-center">Total</th>
-                                <th class="text-center">Total</th>
-                                <th> </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $sql = "select * from booking where email='$username'";
-                            $res = select_data($sql);
-                            $total = 0;
-                            while ($row = mysqli_fetch_assoc($res)) {
-                                /*$total += $row['price'] * $row['quantity'];*/
-                            ?>
-                            <tr>
-                                <td class="col-sm-8 col-md-6">
-                                    <div class="media">
-                                        <a class="thumbnail pull-left"
-                                            href="singleproduct.php?id=<?php echo $row['product_id']; ?>"> <img
-                                                class="media-object"
-                                                src="../admin/uploads/products/<?php echo $row['photo']; ?>"
-                                                style="width: 72px; height: 72px;"> </a>
-                                        <div class="media-body" style="padding:5px;margin-left:5px;">
-                                            <h4 class="media-heading"><a
-                                                    href="singleproduct.php?id=<?php echo $row['product_id']; ?>"><?php echo $row['product_name']; ?></a>
-                                            </h4>
-                                            <h5 class="media-heading"> by <?php echo $row['company']; ?></h5>
-                                            <span>Status: </span><span class="text-success"><strong>In
-                                                    Stock</strong></span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="col-sm-1 col-md-1" style="text-align: center">
-                                    <div class="product-count">
-                                        <form action="#" class="display-flex">
-                                            <div class="qtyminus" onclick="minus(<?php echo $row['item_id']; ?>)">-
-                                            </div>
-                                            <input type="text" id="quantity<?php echo $row['item_id']; ?>"
-                                                name="quantity" value="<?php echo $row['quantity']; ?>" class="qty"
-                                                readonly>
-                                            <div class="qtyplus"
-                                                onclick="plus(<?php echo $row['item_id'] . ',' . $row['stock']; ?>)">+
-                                            </div>
-                                        </form>
-                                    </div>
-                                </td>
-                                <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;">
-                                    <strong><?php echo $row['price']; ?></strong>
-                                </td>
-                                <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;">
-                                    <strong><?php echo $row['price'] * $row['quantity']; ?></strong>
-                                </td>
-                                <td class="col-sm-1 col-md-1">
-                                    <button type="button" class="btn btn-danger"
-                                        onclick="removecart(<?php echo $row['item_id']; ?>)">
-                                        <span class="glyphicon glyphicon-remove"></span> Remove
-                                    </button>
-                                </td>
-                            </tr>
-                            <?php
-                            }
-                            ?>
+            <?php
+            
+            $crid=$arr['car_id'];
+            $sql1 = "select * from product where product_id=$crid";
+            $res1 = select_data($sql1);
+            $total=$arr['total'];
+            $bid=$arr['booking_id'];
+            while ($row1 = mysqli_fetch_assoc($res1))
+            {
+            ?>
+                <div class="col-md-4" style="margin:0px;display: inline-block;">
+                    <div class="card">
+                        <img class="card-img-top" src="../admin/uploads/products/<?php echo $row1['image']; ?>" alt="Card image cap" style="height: 300px;">
+                        <!--<div class="card-header">
+                        <h5 class="card-title"><</h5>
+                        </div>-->
+                        <div class="card-body">
+                        <h5 class="card-title"><?php echo $arr['carname']; ?></h5>
+                            <p class="card-text"><b>Car Category:</b> <?php echo $arr['category']; ?></p>
+                            <p class="card-text"><b>User Email:</b> <?php echo $arr['email']; ?></p>
+                            <p class="card-text"><b>Pick Up Date:</b> <?php echo $arr['pick']; ?></p>
+                           
+                            <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
+                            <p>
+                            <div class="btn-group">
+                      <a href="php/cancelbooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Cancel</a>
+                        
+                      </div>
+                      <div class="btn-group">
+                      <a href="php/cancelbooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Cancel</a>
+                        
+                      </div></p>
 
 
-                            <tr>
-                                <td>   </td>
-                                <td>   </td>
-                                <td>   </td>
-                                <td>
-                                    <h3>Total</h3>
-                                </td>
-                                <td class="text-right">
-                                    <h3><strong> ₹<?php echo $total ?></strong></h3>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>   </td>
-                                <td>   </td>
-                                <td>   </td>
-                                <td>
-                                    <button type="button" class="btn btn-default"
-                                        onclick="window.location.href='allproducts.php'">
-                                        <span class="fa fa-shopping-cart"></span> Continue Shopping
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-success" onclick="pay(<?php echo $total ?>)">
-                                        Buy Now <span class="fa fa-play"></span>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        </div>
+                        <!--<div class="card-footer text-muted">
+
+                        </div>-->
+                    </div>
                 </div>
-            </div>
+            <?php
+            }
+            ?>
+
         </div>
+        </div>
+        
     </section>
+    </main><!-- End #main -->
 
-  </main><!-- End #main -->
+    <?php
+   include 'footer.html';
 
-<?php 
-
-
-require 'footer.html';
 ?>

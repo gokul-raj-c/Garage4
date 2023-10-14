@@ -99,7 +99,10 @@ $bbid=$_GET['id'];
             "description": "Payment",
             
             //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            "callback_url": "./php/success.php?amt,id=" + amt,id,
+            "callback_url": "./php/success.php?amt=" + amt + "&id=" + id,
+
+
+
             "prefill": {
                 "name": "<?php echo $row['first_name'] . ' ' . $row['last_name'] ?>",
                 "email": "<?php echo $row['email_id'] ?>",

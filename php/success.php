@@ -11,7 +11,7 @@
     session_start();
     require('../../php/connect.php');
     if (isset($_GET['amt'])) {
-        $email = $_SESSION['email'];
+        $email = $_SESSION['email_id'];
         $amt = $_GET['amt'];
         $date = date('Y-m-d H:i:s');
 

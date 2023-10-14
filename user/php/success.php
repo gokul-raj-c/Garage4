@@ -6,7 +6,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body>
+<body>                 
     <?php
     session_start();
     require('../../connect.php');
@@ -27,18 +27,24 @@
 
         while ($row = mysqli_fetch_assoc($res)) {
             $product_id = $row['booking_id'];
+            $car_id= $row['car_id'];
             /*$quantity = $row['quantity'];*/
             /*$sql2 = "insert into pro_order (email_id,product_id,order_date,quantity,payment_id) values ('$email','$product_id','$date','$quantity','$pay_id')";
             insert($sql2);*/
 
             $sql3 = "UPDATE booking SET status=1 WHERE booking_id='$product_id'";
             update_data($sql3);
+            $sql4 = "UPDATE product SET status=1 WHERE product_id='$car_id'";
+            update_data($sql4);
         }
+
 
 
        /* $sql = "delete from cart where user='$email'";
         delete($sql);*/
 
+
+    
 
 
     ?>
