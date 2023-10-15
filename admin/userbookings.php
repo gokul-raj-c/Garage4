@@ -2,9 +2,9 @@
 session_start();
 include("header.php");
 
-$username = $_SESSION['email_id'];
+/*$username = $_SESSION['email_id'];
 
-  /* $sql="select * from booking where email='$username'" ;
+   $sql="select * from booking where email='$username'" ;
    $res=select_data($sql);
    $arr=mysqli_fetch_assoc($res);*/
 
@@ -20,12 +20,13 @@ $username = $_SESSION['email_id'];
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
           <!--<li class="breadcrumb-item">Components</li>-->
-          <li class="breadcrumb-item active">My Bookings</li>
+          <li class="breadcrumb-item active">User Bookings</li>
         </ol>
       </nav>
     </div>
+
     <?php
-            $sql="select * from booking where email='$username'" ;
+            $sql="select * from booking where status='1'" ;
             $res=select_data($sql);
             while($arr=mysqli_fetch_assoc($res)){
             
@@ -39,10 +40,9 @@ $username = $_SESSION['email_id'];
             $row1 = mysqli_fetch_assoc($res1)
             
             ?>
-            
                 <div class="col-md-4" style="margin:0px;display: inline-block;">
                     <div class="card">
-                   
+                    
                         <img class="card-img-top" src="../admin/uploads/products/<?php echo $row1['image']; ?>" alt="Card image cap" style="height: 300px;">
                         <!--<div class="card-header">
                         <h5 class="card-title"><</h5>
@@ -71,14 +71,15 @@ $username = $_SESSION['email_id'];
                         </div>-->
                     </div>
                 </div>
-            <?php
+                 <?php
             }
             ?>
-
+           
         </div>
         </div>
-          
-          
+       
+   
+             
         
     </section>
     </main><!-- End #main -->
