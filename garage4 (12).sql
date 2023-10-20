@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2023 at 11:56 AM
+-- Generation Time: Oct 20, 2023 at 09:23 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -50,8 +50,7 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `carname`, `category`, `color`, `capacity`, `rate`, `car_id`, `email`, `days`, `bdate`, `pick`, `dropd`, `total`, `status`, `payment`) VALUES
-(44, 'Benz', 'Premium', 'Black', '4', '5500', '19', 'moncy@gmail.com', '3', '2023-10-14', '2023-10-24', '2023-10-26', '16500', 1, 0),
-(46, 'Polo', 'Other', 'Black', '4', '4000', '17', 'gokulrajc63@gmail.com', '3', '2023-10-14', '2023-10-25', '2023-10-27', '12000', 1, 0);
+(58, 'Fortuner', 'Premium', 'white', '4', '6000', '21', 'moncy@gmail.com', '7', '2023-10-20', '2023-10-24', '2023-10-30', '42000', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -96,7 +95,8 @@ CREATE TABLE `complaint` (
 --
 
 INSERT INTO `complaint` (`complaint_id`, `title`, `description`, `type`, `date`, `email_id`, `reply`, `message`) VALUES
-(10, 'Website Performance', 'It is Not Working Properly', 'website', '2023-10-07', 'moncy@gmail.com', '1', 'We Will Fix It Soon');
+(10, 'Website Performance', 'It is Not Working Properly', 'website', '2023-10-07', 'moncy@gmail.com', '1', 'We Will Fix It Soon'),
+(11, 'Car Working', 'viper not functioning', 'car', '2023-10-14', 'gourirajc@gmail.com', '1', 'we appologise');
 
 -- --------------------------------------------------------
 
@@ -165,6 +165,7 @@ INSERT INTO `login` (`email_id`, `password`, `user_type`, `user_status`) VALUES
 CREATE TABLE `payment` (
   `payment_id` int(11) NOT NULL,
   `booking_id` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `amount` varchar(30) NOT NULL,
   `paid_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -173,9 +174,9 @@ CREATE TABLE `payment` (
 -- Dumping data for table `payment`
 --
 
-INSERT INTO `payment` (`payment_id`, `booking_id`, `amount`, `paid_date`) VALUES
-(11, '44', '16500', '2023-10-14 00:00:00'),
-(12, '46', '12000', '2023-10-14 08:47:03');
+INSERT INTO `payment` (`payment_id`, `booking_id`, `email`, `amount`, `paid_date`) VALUES
+(17, '56', 'moncy@gmail.com', '40000', '2023-10-20 08:32:41'),
+(18, '58', 'moncy@gmail.com', '42000', '2023-10-20 08:50:32');
 
 -- --------------------------------------------------------
 
@@ -205,9 +206,11 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`product_id`, `image`, `name`, `category`, `model_year`, `brand`, `plate_number`, `color`, `capacity`, `description`, `amount`, `status`) VALUES
 (13, 'p3.jpg', 'Audi', 'Premium', '', '', '', 'Blue', '4', 'Maintained', '7000', 0),
 (14, 'p4.jpg', 'Mini Cooper', 'Premium', '', '', '', 'Grey', '2', 'Maintained', '8000', 0),
-(17, 'n5.jpg', 'Polo', 'Other', '', '', '', 'Black', '4', 'Maintained', '4000', 1),
+(17, 'n5.jpg', 'Polo', 'Other', '', '', '', 'Black', '4', 'Maintained', '4000', 0),
 (18, 'nn1.jpg', 'Swift', 'Other', '', '', '', 'White', '4', 'Maintained', '4000', 0),
-(19, 'p1.jpg', 'Benz', 'Premium', '', '', '', 'Black', '4', 'Well Maintained', '5500', 1);
+(19, 'p1.jpg', 'Benz', 'Premium', '', '', '', 'Black', '4', 'Well Maintained', '5500', 0),
+(20, 'v2.jpg', 'Ambassador', 'Vintage', '', '', '', 'white', '4', 'Maintained', '4000', 0),
+(21, 'n3.jpg', 'Fortuner', 'Premium', '', '', '', 'white', '4', 'Maintained', '6000', 1);
 
 -- --------------------------------------------------------
 
@@ -322,7 +325,7 @@ ALTER TABLE `website_review`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `car_photo`
@@ -334,7 +337,7 @@ ALTER TABLE `car_photo`
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `complaint_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `complaint_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -346,13 +349,13 @@ ALTER TABLE `district`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `website_review`

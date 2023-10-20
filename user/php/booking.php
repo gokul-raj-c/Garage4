@@ -32,6 +32,8 @@ if(isset($_POST["submit"])){
     $sql="INSERT INTO booking(carname,category,color,capacity,rate,car_id,email,days,bdate,pick,dropd,total,status,payment) 
     values ('$carname','$category','$color','$capacity','$rate','$id','$email','$days','$bdate','$pdate','$ddate','$total','0','0')";
     insert_data($sql);
+
+    
     ?>
     <script>
               Swal.fire({

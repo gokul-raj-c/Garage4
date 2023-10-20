@@ -25,7 +25,7 @@ $username = $_SESSION['email_id'];
       </nav>
     </div>
     <?php
-            $sql="select * from booking where email='$username'" ;
+            $sql="select * from booking where email='$username' && status=1" ;
             $res=select_data($sql);
             while($arr=mysqli_fetch_assoc($res)){
             
@@ -54,12 +54,12 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Pick Up Date:</b> <?php echo $arr['pick']; ?></p>
                            
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
-                            <!--<p>
+                            <p>
                             <div class="btn-group">
-                      <a href="php/cancelbooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Cancel</a>
+                      <a href="receipt.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">View Receipt</a>
                         
                       </div>
-                      <div class="btn-group">
+                      <!--<div class="btn-group">
                       <a href="php/cancelbooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Cancel</a>
                         
                       </div></p>-->

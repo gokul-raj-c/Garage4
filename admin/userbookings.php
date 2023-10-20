@@ -54,12 +54,12 @@ include("header.php");
                             <p class="card-text"><b>Pick Up Date:</b> <?php echo $arr['pick']; ?></p>
                            
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
-                            <!--<p>
+                            <p>
                             <div class="btn-group">
-                      <a href="php/cancelbooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Cancel</a>
+                      <a href="php/removebooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Remove</a>
                         
                       </div>
-                      <div class="btn-group">
+                      <!--<div class="btn-group">
                       <a href="php/cancelbooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Cancel</a>
                         
                       </div></p>-->
