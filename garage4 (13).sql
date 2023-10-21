@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2023 at 09:23 AM
+-- Generation Time: Oct 21, 2023 at 12:04 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -50,7 +50,9 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `carname`, `category`, `color`, `capacity`, `rate`, `car_id`, `email`, `days`, `bdate`, `pick`, `dropd`, `total`, `status`, `payment`) VALUES
-(58, 'Fortuner', 'Premium', 'white', '4', '6000', '21', 'moncy@gmail.com', '7', '2023-10-20', '2023-10-24', '2023-10-30', '42000', 1, 0);
+(71, 'Audi', 'Premium', 'Blue', '4', '7000', '13', 'gokulrajc63@gmail.com', '2', '2023-10-21', '2023-10-22', '2023-10-23', '14000', 1, 0),
+(72, 'Ambassador', 'Vintage', 'white', '4', '4000', '20', 'gokulrajc63@gmail.com', '4', '2023-10-21', '2023-10-24', '2023-10-27', '16000', 1, 0),
+(73, 'Fortuner', 'Premium', 'white', '4', '6000', '21', 'gokulrajc63@gmail.com', '6', '2023-10-21', '2023-10-26', '2023-10-31', '36000', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -175,8 +177,10 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`payment_id`, `booking_id`, `email`, `amount`, `paid_date`) VALUES
-(17, '56', 'moncy@gmail.com', '40000', '2023-10-20 08:32:41'),
-(18, '58', 'moncy@gmail.com', '42000', '2023-10-20 08:50:32');
+(23, '71', 'gokulrajc63@gmail.com', '14000', '2023-10-21 11:07:20'),
+(24, '72', 'gokulrajc63@gmail.com', '16000', '2023-10-21 11:27:55'),
+(25, '73', 'gokulrajc63@gmail.com', '36000', '2023-10-21 12:00:10'),
+(26, '73', 'gokulrajc63@gmail.com', '36000', '2023-10-21 12:02:08');
 
 -- --------------------------------------------------------
 
@@ -204,12 +208,12 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `image`, `name`, `category`, `model_year`, `brand`, `plate_number`, `color`, `capacity`, `description`, `amount`, `status`) VALUES
-(13, 'p3.jpg', 'Audi', 'Premium', '', '', '', 'Blue', '4', 'Maintained', '7000', 0),
+(13, 'p3.jpg', 'Audi', 'Premium', '', '', '', 'Blue', '4', 'Maintained', '7000', 1),
 (14, 'p4.jpg', 'Mini Cooper', 'Premium', '', '', '', 'Grey', '2', 'Maintained', '8000', 0),
 (17, 'n5.jpg', 'Polo', 'Other', '', '', '', 'Black', '4', 'Maintained', '4000', 0),
 (18, 'nn1.jpg', 'Swift', 'Other', '', '', '', 'White', '4', 'Maintained', '4000', 0),
 (19, 'p1.jpg', 'Benz', 'Premium', '', '', '', 'Black', '4', 'Well Maintained', '5500', 0),
-(20, 'v2.jpg', 'Ambassador', 'Vintage', '', '', '', 'white', '4', 'Maintained', '4000', 0),
+(20, 'v2.jpg', 'Ambassador', 'Vintage', '', '', '', 'white', '4', 'Maintained', '4000', 1),
 (21, 'n3.jpg', 'Fortuner', 'Premium', '', '', '', 'white', '4', 'Maintained', '6000', 1);
 
 -- --------------------------------------------------------
@@ -219,7 +223,7 @@ INSERT INTO `product` (`product_id`, `image`, `name`, `category`, `model_year`, 
 --
 
 CREATE TABLE `registration` (
-  `profile_image` varchar(50) NOT NULL DEFAULT 'default.jpg',
+  `image` varchar(50) NOT NULL DEFAULT 'default.jpg',
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
   `contact` varchar(20) NOT NULL,
@@ -236,12 +240,12 @@ CREATE TABLE `registration` (
 -- Dumping data for table `registration`
 --
 
-INSERT INTO `registration` (`profile_image`, `first_name`, `last_name`, `contact`, `email_id`, `date_of_birth`, `house_name`, `street_name`, `district`, `pincode`, `state`) VALUES
+INSERT INTO `registration` (`image`, `first_name`, `last_name`, `contact`, `email_id`, `date_of_birth`, `house_name`, `street_name`, `district`, `pincode`, `state`) VALUES
 ('default', 'basil', 'k reji', '5588226699', 'basilkreji@gmail.com', '2023-09-07', 'cccc', 'yyyyy', 'Ernakulam', '686667', 'kerala'),
-('default', 'Eldho', 'Wilson', '9074288916', 'eldhowilson@gmail.com', '2003-04-22', 'Chakkalackal', 'Pampakkuda', 'Ernakulam', '686667', 'Kerala'),
+('eldhowilsongmailcom.jpg', 'Eldho', 'Wilson', '9074288916', 'eldhowilson@gmail.com', '2003-04-22', 'Chakkalackal', 'Pampakkuda', 'Ernakulam', '686667', 'Kerala'),
 ('gokulrajc63gmailcom.jpg', 'Gokul', 'Raj', '9061393951', 'gokulrajc63@gmail.com', '2003-04-11', 'Chavarukulangara(H)', 'Periyappuram', 'Ernakulam', '686667', 'Kerala'),
 ('default', 'Gouri', 'Raj', '6235273701', 'gourirajc@gmail.com', '2006-06-06', 'Chavarukulangara', 'Periyappuram', 'Ernakulam', '686667', 'Kerala'),
-('default', 'Moncy', 'Francis', '8945214788', 'moncy@gmail.com', '2003-09-11', 'moncyy', 'Muvattupuzha', 'Ernakulam', '687543', 'kerala');
+('moncygmailcom.jpg', 'Moncy', 'Francis', '8945214788', 'moncy@gmail.com', '2003-09-11', 'moncyy', 'Muvattupuzha', 'Ernakulam', '687543', 'kerala');
 
 -- --------------------------------------------------------
 
@@ -325,7 +329,7 @@ ALTER TABLE `website_review`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `car_photo`
@@ -349,7 +353,7 @@ ALTER TABLE `district`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `product`

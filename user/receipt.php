@@ -1,22 +1,34 @@
 <?php
 session_start();
 include("header.php");
+$username = $_SESSION['email_id'];
+   $sql="select * from registration where email_id='$username'" ;
+   $res=select_data($sql);
+   $arr=mysqli_fetch_assoc($res);
 ?>
-<div id="page-wrapper">
-    <div class="main-page">
-        <h2 class="title1">Receipt</h2>
+ <main id="main" class="main">
+
+<div class="pagetitle">
+  <h1>Complaint</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="viewcar.php">Home</a></li>
+      <li class="breadcrumb-item">Pages</li>
+      <li class="breadcrumb-item active">Contact</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
 
         <?php
         if (isset($_GET['id'])) {
             $booking_id = intval($_GET['id']);
             /*$booking_id = intval($_GET['booking_id']);*/
 
-            require("../connect.php");
             require 'vendor/autoload.php';
 
             // Use a prepared statement to avoid SQL injection
             $stmt = $conn->prepare("SELECT * FROM payment WHERE booking_id = $booking_id");
-            $stmt->bind_param("i", $payment_id); // "i" indicates an integer parameter
+            /*$stmt->bind_param("i", $payment_id); // "i" indicates an integer parameter*/
             $stmt->execute();
             $res = $stmt->get_result();
 
@@ -30,15 +42,15 @@ include("header.php");
 if (isset($_POST['send_receipt'])) {
     $recipientEmail = $row['email'];
     $subject = "Receipt for Payment";
-    $message = "Dear " . $row['full_name'] . ",\n\n";
+    $message = "Dear " . $arr['first_name'] . ",\n\n";
     $message .= "Here is your receipt for the payment of $" . $row['amount'] . ".\n";
-    $message .= "Payment Date: " . $row['time_stamp'] . "\n";
-    $message .= "Thank you for your donation!\n\n";
-    $message .= "Best regards,\nSHAREaSMILE";
+    $message .= "Payment Date: " . $row['paid_date'] . "\n";
+    $message .= "Thank you for your Booking!\n\n";
+    $message .= "Best regards,\nGARAGE4";
 
     $smtpHost = 'smtp.gmail.com';
     $smtpPort = 587;
-    $smtpUsername = 'shareasmile2023@gmail.com';
+    $smtpUsername = 'garage4@gmail.com';
     $smtpPassword = 'pgrl kcec sile kcwx';
 
     // Create a PHPMailer instance
@@ -77,7 +89,7 @@ if (isset($_POST['send_receipt'])) {
     icon: 'success',
     text: 'Recipt Send To Your Email!!!',
     didClose: () => {
-      window.location.replace('payments.php');
+      window.location.replace('receipt.php?id=<?php echo $arr['booking_id'] ?>');
     }
   });
 </script>
@@ -112,23 +124,24 @@ if (isset($_POST['send_receipt'])) {
                                     <hr>
                                     <div class="row">
                                         <div class="col-xs-4 from">
-                                            <p class="lead marginbottom">From : SHAREaSMILE</p>
+                                            <p class="lead marginbottom">From : GARAGE4</p>
                                             <p>India</p>
                                             <p>KERALA</p>
                                             <p>Phone: 415-767-3600</p>
-                                            <p>Email: sas@gmail.com</p>
+                                            <p>Email: garage4@gmail.com</p>
                                         </div>
                                         <div class="col-xs-4 to">
-                                            <p class="lead marginbottom">To : <?php echo $row['donor_email']; ?></p>
-                                            <p><?php echo $row['phone_number']; ?></p>
-                                            <p><?php echo $row['city']; ?></p>
-                                            <p><?php echo $row['address']; ?></p>
+                                            <p class="lead marginbottom">To : <?php echo $row['email']; ?></p>
+                                            <p><?php echo $arr['contact']; ?></p>
+                                            <p><?php echo $arr['house_name']; ?></p>
+                                            <p><?php echo $arr['street_name']; ?></p>
+                                            <p><?php echo $arr['district']; ?></p>
                                         </div>
                                         <div class="col-xs-4 text-right payment-details">
                                             <p class="lead marginbottom payment-info">Payment details</p>
                                             <p>Amount: <?php echo $row['amount']; ?></p>
-                                            <p>Organization Email: <?php echo $row['organization_email']; ?></p>
-                                            <p>Date: <?php echo $row['time_stamp']; ?></p>
+                                            <p>User Email: <?php echo $row['email']; ?></p>
+                                            <p>Date: <?php echo $row['paid_date']; ?></p>
                                         </div>
                                     </div>
                                     <div class="row">

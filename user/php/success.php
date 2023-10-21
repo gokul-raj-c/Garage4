@@ -38,10 +38,30 @@
             update_data($sql4);
         }
 
+        
+      
+        
 
+        
+        $title = "Booking successfully";
 
-       /* $sql = "delete from cart where user='$email'";
-        delete($sql);*/
+        $body = "
+        <html>
+        <body>
+        Hi,<br>
+        Your Booking from Garage4 has been placed successfully.
+        <br><br>
+        <br><br>
+        Thank You<br>
+        Team Garage4
+        
+        </body>
+        </html>
+        ";
+
+      
+
+        send_mail($email, $title, $body);
 
 
     

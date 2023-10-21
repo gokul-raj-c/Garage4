@@ -94,12 +94,12 @@ $id=$_GET['id'];
                   <input name="useremail" type="text" class="form-control" id="useremail" value= <?php echo $arr1['email_id'];?>>
                   </div>
                 </div>
-                <div class="row mb-3">
+                <!--<div class="row mb-3">
                   <label for="inputDate" class="col-sm-2 col-form-label">No Of Days For Rent</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control" name="noofdays" id="noofdays">
                   </div>
-                </div>
+                </div>-->
                 <div class="row mb-3">
                   <label for="inputDate" class="col-sm-2 col-form-label">PicUp Date</label>
                   <div class="col-sm-10">

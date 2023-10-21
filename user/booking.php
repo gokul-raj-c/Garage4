@@ -4,7 +4,7 @@ include("header.php");
 
 $username = $_SESSION['email_id'];
 $bbid=$_GET['id'];
-   $sql="select * from booking where car_id='$bbid'" ;
+   $sql="select * from booking where booking_id='$bbid' && status=0" ;
    $res=select_data($sql);
    $arr=mysqli_fetch_assoc($res);
 

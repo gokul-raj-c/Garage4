@@ -21,18 +21,31 @@ if(isset($_POST["submit"])){
     $rate=$_POST['carrate'];
 
     $email=$_POST['useremail'];
-    $days=$_POST['noofdays'];
+    /*$days=$_POST['noofdays'];*/
     $bdate=date("Y-m-d"); 
-    $pdate=$_POST['pickupdate'];
-    $ddate=$_POST['dropdate'];
-    $total=$rate*$days;
+    $pdate=($_POST['pickupdate']);
+    $ddate=($_POST['dropdate']);
+   
+
+$firstDate = DateTime::createFromFormat('Y-m-d', $pdate);
+$secondDate = DateTime::createFromFormat('Y-m-d', $ddate);
+
+if ($firstDate && $secondDate) {
+    $interval = $firstDate->diff($secondDate);
+    $daysDifference = $interval->days;
+    echo $daysDifference; // This will give you the difference in days
+} else {
+    echo "Invalid date format";
+}
+$daysDifference1=$daysDifference+1;
+    $total=$rate*$daysDifference1;
     
 
     
     $sql="INSERT INTO booking(carname,category,color,capacity,rate,car_id,email,days,bdate,pick,dropd,total,status,payment) 
-    values ('$carname','$category','$color','$capacity','$rate','$id','$email','$days','$bdate','$pdate','$ddate','$total','0','0')";
+    values ('$carname','$category','$color','$capacity','$rate','$id','$email','$daysDifference1','$bdate','$pdate','$ddate','$total','0','0')";
     insert_data($sql);
-
+    $ld = mysqli_insert_id($conn);
     
     ?>
     <script>
@@ -40,7 +53,7 @@ if(isset($_POST["submit"])){
                 icon: 'success',
                 text: 'Proceeding To Payment',
                 didClose: () => {
-                  window.location.replace('../booking.php?id=<?php echo $id ?>');
+                  window.location.replace('../booking.php?id=<?php echo $ld ?>');
                 }
               });
             </script>

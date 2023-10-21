@@ -40,6 +40,12 @@ require("../connect.php");
 
   <!-- Template Main CSS File -->
   <link href="assets/css/styleeee.css" rel="stylesheet">
+  <script type="text/javascript" src="php/swal/jquery.min.js"></script>
+  <script type="text/javascript" src="php/swal/bootstrap.min.js"></script>
+  <script type="text/javascript" src="php/swal/sweetalert2@11.js"></script>
+
+  <!-- JQuery Ajax -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
