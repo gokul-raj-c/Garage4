@@ -18,14 +18,14 @@ $username = $_SESSION['email_id'];
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
-          <!--<li class="breadcrumb-item">Components</li>
-          <li class="breadcrumb-item active">Cars</li>-->
+          <!--<li class="breadcrumb-item">Components</li>-->
+          <li class="breadcrumb-item active">Blocked Cars</li>
         </ol>
       </nav>
     </div>
 
             <?php
-            $sql = "select * from product WHERE status='0'";
+            $sql = "select * from product WHERE status='2'";
             $res = select_data($sql);
             while ($row = mysqli_fetch_assoc($res)) {
             ?>
@@ -43,16 +43,16 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Description:</b> <?php echo $row['description']; ?></p>
                             <p class="card-text"><b>Rate:</b> <?php echo $row['amount']; ?> :Per Day    </p>
                             <p>
-                      <div class="btn-group">
+                      <!--<div class="btn-group">
                       <a href="carupdate.php?id=<?php echo $row['product_id'] ?>" class="btn btn-success btn">Update</a>
                         
                       </div>
                       <div class="btn-group">
-                      <a href="php/carblock.php?id=<?php echo $row['product_id'] ?>" class="btn btn-success btn">Block</a>
+                      <a href="carblock.php?id=<?php echo $row['product_id'] ?>" class="btn btn-success btn">Block</a>
                         
-                      </div>
+                      </div>-->
                       <div class="btn-group">
-                      <a href="php/deletecar.php?id=<?php echo $row['product_id'] ?>" class="btn btn-danger btn">Delete</a>
+                      <a href="php/removeblock.php?id=<?php echo $row['product_id'] ?>" class="btn btn-danger btn">Delete</a>
                         
                       </div></p>
 

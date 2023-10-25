@@ -513,11 +513,24 @@ require("../connect.php");
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link collapsed" href="mainindex.php">
+          <i class="bi bi-card-list"></i>
+          <span>Main Index</span>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link collapsed" href="viewcar.php">
           <i class="bi bi-card-list"></i>
           <span>View Cars</span>
         </a>
       </li><!-- End Contact Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="blockedcars.php">
+          <i class="bi bi-card-list"></i>
+          <span>Blocked Cars</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="userbookings.php">

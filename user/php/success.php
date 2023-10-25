@@ -8,6 +8,13 @@
 
 <body>                 
     <?php
+    use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer; 
+
+require '../../phpmailer/src/Exception.php';
+require '../../phpmailer/src/PHPMailer.php';
+require '../../phpmailer/src/SMTP.php';
+
     session_start();
     require('../../connect.php');
     if (isset($_GET['amt'])) {
@@ -36,37 +43,51 @@
             update_data($sql3);
             $sql4 = "UPDATE product SET status=1 WHERE product_id='$car_id'";
             update_data($sql4);
-        }
-
+        
+            $sql5 = "select * from booking where booking_id=$product_id";
+            $res = select_data($sql5);
+    
+            $orders = " <table cellpadding=10px cellspacing=10px > ";
+            while ($row = mysqli_fetch_assoc($res)) {
+                $orders .= "<tr><td>".$row['booking_id']."</td></tr>";
+            }
+    
+            $orders .= " </table> ";
         
       
         
 
-        
-        $title = "Booking successfully";
-
-        $body = "
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'teamgarage4web@gmail.com';
+        $mail->Password = 'tptnqdqdzmojldoe';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+        $mail->setFrom($email);
+    
+        $mail->addAddress($email);
+        $mail->isHTML(true);
+        $mail->Subject = "Booking Successfull";
+        $mail->Body = "
         <html>
         <body>
         Hi,<br>
-        Your Booking from Garage4 has been placed successfully.
-        <br><br>
+        Your booking from Garage4 has been placed successfully. Please find the order ids below.
+        <br><br>".$orders."
         <br><br>
         Thank You<br>
-        Team Garage4
+        Team GARAGE4
         
         </body>
         </html>
         ";
-
-      
-
-        send_mail($email, $title, $body);
-
-
+    
+        $mail->send();
     
 
-
+        }
     ?>
     <script>
     Swal.fire({

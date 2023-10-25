@@ -53,7 +53,7 @@ function count_data($sql)
     return False;
 }
 function send_mail($email, $title, $body) {
-  if (mail($email, $title, $body, "From: Garage4<garage4@gmail.com>\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UISO-8859-1\r\n"))
+  if (mail($email, $title, $body, "From: Garage4<teamgarage4web@gmail.com>\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UISO-8859-1\r\n"))
       return 1;
   else
       return 0;
