@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2023 at 05:39 PM
+-- Generation Time: Oct 26, 2023 at 12:14 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -52,7 +52,8 @@ CREATE TABLE `booking` (
 INSERT INTO `booking` (`booking_id`, `carname`, `category`, `color`, `capacity`, `rate`, `car_id`, `email`, `days`, `bdate`, `pick`, `dropd`, `total`, `status`, `payment`) VALUES
 (81, 'Benz', 'Premium', 'Black', '4', '5500', '19', 'gokulrajc63@gmail.com', '3', '2023-10-25', '2023-10-26', '2023-10-28', '16500', 1, 0),
 (82, 'Fortuner', 'Premium', 'white', '4', '6000', '21', 'gokulrajc63@gmail.com', '3', '2023-10-25', '2023-10-26', '2023-10-28', '18000', 1, 0),
-(83, 'Polo', 'Other', 'Black', '4', '4000', '17', 'gokulrajc63@gmail.com', '4', '2023-10-25', '2023-10-27', '2023-10-30', '16000', 1, 0);
+(83, 'Polo', 'Other', 'Black', '4', '4000', '17', 'gokulrajc63@gmail.com', '4', '2023-10-25', '2023-10-27', '2023-10-30', '16000', 1, 0),
+(84, 'Audi', 'Premium', 'Blue', '4', '7000', '13', 'gokulrajc63@gmail.com', '4', '2023-10-26', '2023-10-27', '2023-10-30', '28000', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -193,7 +194,8 @@ INSERT INTO `payment` (`payment_id`, `booking_id`, `email`, `amount`, `paid_date
 (36, '80', 'gokulrajc63@gmail.com', '28000', '2023-10-25 16:45:39'),
 (37, '81', 'gokulrajc63@gmail.com', '16500', '2023-10-25 17:00:44'),
 (38, '82', 'gokulrajc63@gmail.com', '18000', '2023-10-25 17:28:00'),
-(39, '83', 'gokulrajc63@gmail.com', '16000', '2023-10-25 17:38:29');
+(39, '83', 'gokulrajc63@gmail.com', '16000', '2023-10-25 17:38:29'),
+(40, '84', 'gokulrajc63@gmail.com', '28000', '2023-10-26 06:50:58');
 
 -- --------------------------------------------------------
 
@@ -221,7 +223,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `image`, `name`, `category`, `model_year`, `brand`, `plate_number`, `color`, `capacity`, `description`, `amount`, `status`) VALUES
-(13, 'p3.jpg', 'Audi', 'Premium', '', '', '', 'Blue', '4', 'Maintained', '7000', 0),
+(13, 'p3.jpg', 'Audi', 'Premium', '', '', '', 'Blue', '4', 'Maintained', '7000', 1),
 (14, 'p4.jpg', 'Mini Cooper', 'Premium', '', '', '', 'Grey', '2', 'Maintained', '8000', 0),
 (17, 'n5.jpg', 'Polo', 'Other', '', '', '', 'Black', '4', 'Maintained', '4000', 1),
 (18, 'nn1.jpg', 'Swift', 'Other', '', '', '', 'White', '4', 'Maintained', '4000', 0),
@@ -342,7 +344,7 @@ ALTER TABLE `website_review`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `car_photo`
@@ -366,7 +368,7 @@ ALTER TABLE `district`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `product`

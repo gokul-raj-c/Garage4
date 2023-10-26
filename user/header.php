@@ -25,6 +25,13 @@ require("../connect.php");
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+
+  
+  <script type="text/javascript" src="php/swal/jquery.min.js"></script>
+  <script type="text/javascript" src="php/swal/bootstrap.min.js"></script>
+  <script type="text/javascript" src="php/swal/sweetalert2@11.js"></script>
+
+
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -40,10 +47,7 @@ require("../connect.php");
 
   <!-- Template Main CSS File -->
   <link href="assets/css/styleeee.css" rel="stylesheet">
-  <script type="text/javascript" src="php/swal/jquery.min.js"></script>
-  <script type="text/javascript" src="php/swal/bootstrap.min.js"></script>
-  <script type="text/javascript" src="php/swal/sweetalert2@11.js"></script>
-
+  
   <!-- JQuery Ajax -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -229,7 +233,7 @@ require("../connect.php");
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/default.jpg" alt="Profile" class="rounded-circle">
+            <img src="../uploads/profile/<?php echo $arr['image'] ?>" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2"><h5><?php echo $arr['first_name'] . " " . $arr['last_name']; ?></h5></span>
           </a><!-- End Profile Iamge Icon -->
 

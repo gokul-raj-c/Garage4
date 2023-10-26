@@ -1,14 +1,14 @@
 <?php
 session_start();
-include("header.php");
+require("header.php");
 
 
 
    
-   $username = $_SESSION['email_id'];
+   /*$username = $_SESSION['email_id'];
    $sql="select * from registration where email_id='$username'" ;
    $res=select_data($sql);
-   $arr=mysqli_fetch_assoc($res);
+   $arr=mysqli_fetch_assoc($res);*/
    ?>
 
 
@@ -32,7 +32,7 @@ include("header.php");
                 <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                        <img src="<?php echo 'uploads/profile/' . $arr['image']?>" alt="Profile" class="rounded-circle" style="min-width:200px;">
+                        <img src="../uploads/profile/<?php echo $arr['image'] ?>" alt="Profile" class="rounded-circle" style="min-width:200px;">
 
                         <div style="margin-left: 450px;margin-top: -40px; z-index: 99;">
                             <label class="btn-bs-file btn btn-sm btn-primary">

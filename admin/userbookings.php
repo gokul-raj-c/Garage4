@@ -49,20 +49,20 @@ include("header.php");
                         </div>-->
                         <div class="card-body">
                         <h5 class="card-title"><?php echo $arr['carname']; ?></h5>
-                            <p class="card-text"><b>Car Category:</b> <?php echo $arr['category']; ?></p>
+                            <!--<p class="card-text"><b>Car Category:</b> <?php echo $arr['category']; ?></p>-->
                             <p class="card-text"><b>User Email:</b> <?php echo $arr['email']; ?></p>
                             <p class="card-text"><b>Pick Up Date:</b> <?php echo $arr['pick']; ?></p>
-                           
+                            <p class="card-text"><b>Drop Date:</b> <?php echo $arr['dropd']; ?></p>
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
                             <p>
                             <div class="btn-group">
                       <a href="php/removebooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Remove</a>
                         
                       </div>
-                      <!--<div class="btn-group">
-                      <a href="php/cancelbooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">Cancel</a>
+                      <div class="btn-group">
+                      <a href="php/cancelbooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-success btn">View User Details</a>
                         
-                      </div></p>-->
+                      </div></p>
 
 
                         </div>
