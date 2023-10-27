@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("header.php");
+include("header.php");
 
 
 
@@ -18,7 +18,7 @@ require("header.php");
       <h1>Profile</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="viewcar.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Users</li>
           <li class="breadcrumb-item active">Profile</li>
         </ol>
@@ -26,41 +26,25 @@ require("header.php");
     </div><!-- End Page Title -->
 
     <section class="section profile">
-        <div class="row">
-            <div class="col-xl-4">
+      <div class="row">
+        <div class="col-xl-4">
 
-                <div class="card">
-                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+          <div class="card">
+            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                        <img src="../uploads/profile/<?php echo $arr['image'] ?>" alt="Profile" class="rounded-circle" style="min-width:200px;">
-
-                        <div style="margin-left: 450px;margin-top: -40px; z-index: 99;">
-                            <label class="btn-bs-file btn btn-sm btn-primary">
-                                <i class="bi bi-camera" id="icon">
-                                </i>
-
-
-                            </label>
-
-                            <form id="profrm" name="profrm" method="post" style="visibility: hidden;">
-                                <input type="file" name="propic" id="propic" onchange="return(imgCheck())" />
-                            </form>
-                        </div>
-                        <h2 style="text-transform=capitalize;">
-                            <?php echo $arr['first_name'] ?>
-                            <?php echo $arr['last_name'] ?>
-                        </h2>
-                        <h3>Customer</h3>
-                        <!--<div class="social-links mt-2">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                        </div>-->
-                    </div>
-                </div>
-
+              <img src="assets/img/default.jpg" alt="Profile" class="rounded-circle">
+              <h2><?php echo $arr['first_name'];?> <?php echo $arr['last_name'];?></h2>
+              <h3>Customer</h3>
+              <!--<div class="social-links mt-2">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>--->
             </div>
+          </div>
+
+        </div>
 
         <div class="col-xl-8">
 
@@ -77,8 +61,8 @@ require("header.php");
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
                 </li>
 
-               <!--<li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Profile Photo</button>
+               <!-- <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
                 </li>-->
 
                 <li class="nav-item">
@@ -227,18 +211,41 @@ require("header.php");
 
                 <div class="tab-pane fade pt-3" id="profile-settings">
 
-                  <!-- Settings Form --
-                  <form method="POST" action="php/profile_pic.php" role="form" enctype="multipart/form-data" onsubmit="return check()">
+                  <!-- Settings Form -->
+                  <form>
 
                     <div class="row mb-3">
-                  
-                  <label for="inputNumber" class="col-sm-2 col-form-label">Photo Upload</label>
-                  <div class="col-sm-10">
-                    <input class="form-control" type="file" id="photo" name="photo" required="">
-                  </div>
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email Notifications</label>
+                      <div class="col-md-8 col-lg-9">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="changesMade" checked>
+                          <label class="form-check-label" for="changesMade">
+                            Changes made to your account
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="newProducts" checked>
+                          <label class="form-check-label" for="newProducts">
+                            Information on new products and services
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="proOffers">
+                          <label class="form-check-label" for="proOffers">
+                            Marketing and promo offers
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="securityNotify" checked disabled>
+                          <label class="form-check-label" for="securityNotify">
+                            Security alerts
+                          </label>
+                        </div>
+                      </div>
+                    </div>
 
                     <div class="text-center">
-                      <button type="submit" name="submit" class="btn btn-primary">Save Changes</button>
+                      <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
                   </form><!-- End settings Form -->
 
@@ -284,125 +291,6 @@ require("header.php");
         </div>
       </div>
     </section>
-    <script>
-    // alert("hello");
-
-
-
-    // Get references to the input and button elements
-    const inputElement = document.getElementById("propic");
-    const buttonElement = document.getElementById("icon");
-
-    // Add a click event listener to the button
-    buttonElement.addEventListener("click", function () {
-        // Trigger a click event on the input element
-        inputElement.click();
-    });
-
-    function imgCheck() {
-
-
-
-
-        var form = ['png', 'jpg', 'jpeg','JPG'];
-        var x = document.getElementById("propic");
-
-        if ('files' in x) {
-
-
-
-
-            var file = x.files[0];
-            if ('name' in file && 'size' in file) {
-                var name = file.name;
-                // alert(name);
-
-                var frm = name.substring(name.indexOf(".") + 1);
-
-                var sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
-
-                // alert(file.height);
-
-                // alert(width);
-                if (!form.includes(frm)) {
-                    Swal.fire({
-                        title: "Upload Failed",
-                        text: "Invalid File Format",
-                        icon: "error",
-                        timer: 1500,
-                        showConfirmButton: false,
-                        didClose: () => {
-                            window.location.reload(true);
-                        }
-                    });
-                    return false;
-                }
-                else if (!(sizeInMB < 10)) {
-                    Swal.fire({
-                        title: "Upload Failed",
-                        text: "Size exceeds 1MB",
-                        icon: "error",
-                        timer: 1500,
-                        showConfirmButton: false,
-                        didClose: () => {
-                            window.location.reload(true);
-                        }
-                    });
-                    return false;
-                }
-                else {
-
-
-                    var fd = new FormData();
-                    var files = $('#propic')[0].files[0];
-                    fd.append('pro', files);
-                    $.ajax({
-                        type: 'post',
-                        url: 'php/imagecheck.php',
-                        data: fd,
-                        processData: false,
-                        contentType: false,
-                        success: function (ret) {
-                            var res = ret.trim();
-
-                            if (res == "1") {
-                                // alert("Success");
-                                Swal.fire({
-                                    title: "Upload Successfull",
-                                    text: "Profile Image Updated",
-                                    icon: "success",
-                                    timer: 1500,
-                                    showConfirmButton: false,
-                                    didClose: () => {
-                                        window.location.reload(true);
-                                    }
-                                });
-                            }
-                            else {
-
-                                Swal.fire({
-                                    title: "Upload Failed",
-                                    text: "Profile Image Failed",
-                                    icon: "error",
-                                    timer: 1500,
-                                    showConfirmButton: false,
-                                    didClose: () => {
-                                        window.location.reload(true);
-                                    }
-                                });
-                            }
-
-                        }
-                    });
-                }
-            }
-        }
-
-
-    }
-
-   
-</script>
     <?php 
 
 include 'footer.html';

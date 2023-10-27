@@ -233,7 +233,7 @@ require("../connect.php");
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="../uploads/profile/<?php echo $arr['image'] ?>" alt="Profile" class="rounded-circle">
+          <img src="assets/img/default.jpg" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2"><h5><?php echo $arr['first_name'] . " " . $arr['last_name']; ?></h5></span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -510,19 +510,25 @@ require("../connect.php");
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Log Out</span>
         </a>
-      </li><!-- End Login Page Nav --
+      </li><!-- End Login Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="turf_view.php">
+        <a class="nav-link collapsed" href="invoice.php">
           <i class="bi bi-dash-circle"></i>
-          <span>Error 404</span>
+          <span>Invoice</span>
         </a>
-      </li><!-- End Error 404 Page Nav 
+      </li><!-- End Error 404 Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="receipt.php">
+          <i class="bi bi-dash-circle"></i>
+          <span>Invoice2</span>
+        </a>
+      </li><!-- End Error 404 Page Nav--> 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
+        <a class="nav-link collapsed" href="invoicethomas.php">
           <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
+          <span>invoice3</span>
         </a>
       </li><!-- End Blank Page Nav -->
 
