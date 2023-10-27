@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="swal/jquery.min.js"></script>
-  <script type="text/javascript" src="swal/bootstrap.min.js"></script>
-  <script type="text/javascript" src="swal/sweetalert2@11.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-
 <body>
 <?php
 session_start();
@@ -24,12 +22,16 @@ if ($data && $data->num_rows > 0) {
     $storedOTP = $row['otp'];
 
     if ($OTP == $storedOTP) {
-        echo "<script>alert('OTP VERIFIED');</script>";
-        echo "<script>window.location.href='newpassword.php';</script>";
-    
-    
-   
-    
+        ?>
+    <script>
+    Swal.fire({
+        icon: 'success',
+        title: 'OTP verified!!!',
+    }).then((result) => {
+        window.location.replace('newpassword.php');
+    });
+   </script>
+<?php
 } else {
   
 ?>

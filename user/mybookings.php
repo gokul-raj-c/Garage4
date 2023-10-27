@@ -56,7 +56,7 @@ $username = $_SESSION['email_id'];
                             <p class="card-text"><b>Total Rate:</b> <?php echo $arr['total']; ?></p>
                             <p>
                             <div class="btn-group">
-                      <a href="receipt.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">View Receipt</a>
+                      <a href="invoice.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-danger btn">View Receipt</a>
                         
                       </div>
                       <!--<div class="btn-group">

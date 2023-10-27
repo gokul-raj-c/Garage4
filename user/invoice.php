@@ -10,7 +10,11 @@ $username = $_SESSION['email_id'];
 
 
 
-/*$id = $_GET['id'];*/
+$id = $_GET['id'];
+$sql1="select * from booking where booking_id='$id'" ;
+$res1=select_data($sql1);
+$arr1=mysqli_fetch_assoc($res1);
+
 
 ?>
 
@@ -51,6 +55,7 @@ $username = $_SESSION['email_id'];
 
 .invoice-company {
     font-size: 20px
+    text-align: right;
 }
 
 .invoice-header {
@@ -119,8 +124,8 @@ $username = $_SESSION['email_id'];
 
 .invoice-price .invoice-price-right {
     width: 25%;
-    background: #2d353c;
-    color: #fff;
+    background: #f0f3f4;
+    color: #343a40;
     font-size: 28px;
     text-align: right;
     vertical-align: bottom;
@@ -203,37 +208,48 @@ $username = $_SESSION['email_id'];
             </span>-->
            <p><h2><b> TEAM GARAGE4 </b></h2></p>
          </div>
+         <div class="invoice-company">
+            <span class="pull-right">
+            <button type="button" class="btn btn-dark" onclick="window.print();"><i class="fa fa-print"></i>
+                Print</button>
+            <button type="button" class="btn btn-danger" id="exportButton"><i class="fa fa-file-pdf-o"></i> Export as
+                PDF</button>
+            </span>
+         
+         </div>
          <!-- end invoice-company -->
          <!-- begin invoice-header -->
          <div class="invoice-header">
             <div class="invoice-from">
                <small>From</small>
                <address class="m-t-5 m-b-5">
-                  <strong class="text-inverse">Twitter, Inc.</strong><br>
-                  Street Address<br>
-                  City, Zip Code<br>
-                  Phone: (123) 456-7890<br>
-                  Fax: (123) 456-7890
+                  <strong class="text-inverse">Team GARAGE4</strong><br>
+                  Opp Old Petrol Pump<br>
+                  Piravom,Ernakulam<br>
+                  Phone: 9061393951<br>
+                  Mail: teamgarage4web@gmail.com
                </address>
             </div>
             <div class="invoice-to">
                <small>To</small>
                <address class="m-t-5 m-b-5">
-                  <strong class="text-inverse">Company Name</strong><br>
-                  Street Address<br>
-                  City, Zip Code<br>
-                  Phone: (123) 456-7890<br>
-                  Fax: (123) 456-7890
+                  <strong class="text-inverse"><?php echo $arr['first_name'];?> <?php echo $arr['last_name'];?></strong><br>
+                  <?php echo $arr['house_name'];?>,<br>
+                  <?php echo $arr['street_name'];?>
+                  <?php echo $arr['district'];?><br>
+                  Phone: <?php echo $arr['contact'];?><br>
+                  Mail: <?php echo $arr['email_id'];?>
+                  
                </address>
             </div>
             <div class="invoice-date">
-               <small>Invoice / July period</small>
-               <div class="date text-inverse m-t-5">August 3,2012</div>
+               <h4>Invoice - <?php echo $arr1['booking_id'];?></h4>
+               <!--<div class="date text-inverse m-t-5">August 3,2012</div>
                <div class="invoice-detail">
                   #0000123DSS<br>
                   Services Product
                </div>
-            </div>
+            </div>-->
          </div>
          <!-- end invoice-header -->
          <!-- begin invoice-content -->
@@ -243,23 +259,30 @@ $username = $_SESSION['email_id'];
                <table class="table table-invoice">
                   <thead>
                      <tr>
-                        <th>TASK DESCRIPTION</th>
-                        <th class="text-center" width="10%">RATE</th>
-                        <th class="text-center" width="10%">HOURS</th>
-                        <th class="text-right" width="20%">LINE TOTAL</th>
+                        <th>CAR NAME</th>
+                        <th>RATE</th>
+                        <th>BOOKED DATE</th>
+                        <th>PICKUP DATE</th>
+                        <th>DROP DATE</th>
+                        <th>NO OF DAYS</th>
+                       <!-- <th class="text-center" width="10%">HOURS</th>
+                        <th class="text-right" width="20%">LINE TOTAL</th>-->
                      </tr>
                   </thead>
                   <tbody>
                      <tr>
-                        <td>
+                        <!--<td>
                            <span class="text-inverse">Website design &amp; development</span><br>
                            <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id sagittis arcu.</small>
-                        </td>
-                        <td class="text-center">$50.00</td>
-                        <td class="text-center">50</td>
-                        <td class="text-right">$2,500.00</td>
+                        </td>-->
+                        <td><?php echo $arr1['carname'];?></td>
+                        <td><?php echo $arr1['rate'];?></td>
+                        <td><?php echo $arr1['bdate'];?></td>
+                        <td><?php echo $arr1['pick'];?></td>
+                        <td><?php echo $arr1['dropd'];?></td>
+                        <td><?php echo $arr1['days'];?></td>
                      </tr>
-                     <tr>
+                     <!--<tr>
                         <td>
                            <span class="text-inverse">Branding</span><br>
                            <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id sagittis arcu.</small>
@@ -276,7 +299,7 @@ $username = $_SESSION['email_id'];
                         <td class="text-center">$50.00</td>
                         <td class="text-center">50</td>
                         <td class="text-right">$2,500.00</td>
-                     </tr>
+                     </tr>-->
                   </tbody>
                </table>
             </div>
@@ -285,7 +308,7 @@ $username = $_SESSION['email_id'];
             <div class="invoice-price">
                <div class="invoice-price-left">
                   <div class="invoice-price-row">
-                     <div class="sub-price">
+                     <!--<div class="sub-price">
                         <small>SUBTOTAL</small>
                         <span class="text-inverse">$4,500.00</span>
                      </div>
@@ -295,51 +318,44 @@ $username = $_SESSION['email_id'];
                      <div class="sub-price">
                         <small>PAYPAL FEE (5.4%)</small>
                         <span class="text-inverse">$108.00</span>
-                     </div>
+                     </div>-->
                   </div>
                </div>
                <div class="invoice-price-right">
-                  <small>TOTAL</small> <span class="f-w-600">$4508.00</span>
+                  <b><medium>TOTAL : </medium> <span class="f-w-600"><?php echo $arr1['total'];?></span></b>
                </div>
             </div>
             <!-- end invoice-price -->
          </div>
-         <div class="invoice-company text-inverse f-w-600">
-            <span class="pull-right hidden-print">
-            <button type="button" class="btn btn-dark" onclick="window.print();"><i class="fa fa-print"></i>
-                Print</button>
-            <button type="button" class="btn btn-danger" id="exportButton"><i class="fa fa-file-pdf-o"></i> Export as
-                PDF</button>
-            </span>
          
-         </div>
          <!-- end invoice-content -->
          <!-- begin invoice-note -->
-         <div class="invoice-note">
-            * Make all cheques payable to [Your Company Name]<br>
-            * Payment is due within 30 days<br>
-            * If you have any questions concerning this invoice, contact  [Name, Phone Number, Email]
+         <div class="invoice-footer"><h6>
+            * Invoice was created on a computer and is valid without the signature and seal.<br>
+            * If you have any questions concerning this invoice, contact  [Name, Phone Number, Email]</h6>
          </div>
-         <div class="invoice-note">
+        <!-- <div class="invoice-note">
             *Invoice was created on a computer and is valid without the signature and seal.
             * 
-         </div>
+         </div>-->
          <!-- end invoice-note -->
          <!-- begin invoice-footer -->
          <div class="invoice-footer">
-            <p class="text-center m-b-5 f-w-600">
-               THANK YOU FOR YOUR BUSINESS
-            </p>
-            <p class="text-center">
+            <h4><p class="text-center m-b-5 f-w-600">
+               THANK YOU FOR YOUR BOOKING
+            </p></h4>
+            <!--<p class="text-center">
                <span class="m-r-10"><i class="fa fa-fw fa-lg fa-globe"></i> matiasgallipoli.com</span>
                <span class="m-r-10"><i class="fa fa-fw fa-lg fa-phone-volume"></i> T:016-18192302</span>
                <span class="m-r-10"><i class="fa fa-fw fa-lg fa-envelope"></i> rtiemps@gmail.com</span>
-            </p>
+            </p>-->
          </div>
          <!-- end invoice-footer -->
+         
       </div>
    </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
 
