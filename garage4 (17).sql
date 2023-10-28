@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2023 at 12:06 PM
+-- Generation Time: Oct 28, 2023 at 12:10 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -51,27 +51,6 @@ CREATE TABLE `booking` (
 
 INSERT INTO `booking` (`booking_id`, `carname`, `category`, `color`, `capacity`, `rate`, `car_id`, `email`, `days`, `bdate`, `pick`, `dropd`, `total`, `status`, `payment`) VALUES
 (86, 'Benz', 'Premium', 'Black', '4', '5500', '19', 'gokulrajc63@gmail.com', '2', '2023-10-27', '2023-10-28', '2023-10-29', '11000', 1, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `car_photo`
---
-
-CREATE TABLE `car_photo` (
-  `image_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `image` varchar(50) NOT NULL DEFAULT 'default.jpg'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `car_photo`
---
-
-INSERT INTO `car_photo` (`image_id`, `user_id`, `image`) VALUES
-(4, 12, 'OIP.jpeg'),
-(5, 12, 'download.jpeg'),
-(6, 12, 'download (1).jpeg');
 
 -- --------------------------------------------------------
 
@@ -152,7 +131,7 @@ INSERT INTO `login` (`email_id`, `password`, `user_type`, `user_status`) VALUES
 ('admin1234@gmail.com', 'admin1234', '0', '1'),
 ('basilkreji@gmail.com', 'basil1234', '1', '1'),
 ('eldhowilson@gmail.com', 'eldho1234', '1', '1'),
-('gokulrajc63@gmail.com', 'gokul12345', '1', '1'),
+('gokulrajc63@gmail.com', 'kumaran', '1', '1'),
 ('gourirajc@gmail.com', 'gouri1234', '1', '1'),
 ('moncy@gmail.com', 'moncy1234', '1', '1');
 
@@ -167,7 +146,7 @@ CREATE TABLE `otp` (
   `email` varchar(100) NOT NULL,
   `otp` varchar(100) NOT NULL,
   `expiry` datetime NOT NULL,
-  `sendtime` datetime NOT NULL
+  `sendtime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -175,7 +154,10 @@ CREATE TABLE `otp` (
 --
 
 INSERT INTO `otp` (`id`, `email`, `otp`, `expiry`, `sendtime`) VALUES
-(1, 'gokulrajc63@gmail.com', '554133', '2023-10-27 12:16:22', '0000-00-00 00:00:00');
+(1, 'gokulrajc63@gmail.com', '554133', '2023-10-27 12:16:22', '0000-00-00 00:00:00'),
+(2, 'gokulrajc63@gmail.com', '862464', '2023-10-28 07:22:14', '2023-10-28 05:07:19'),
+(3, 'gokulrajc63@gmail.com', '816957', '2023-10-28 07:24:01', '2023-10-28 05:09:16'),
+(4, 'gokulrajc63@gmail.com', '307779', '2023-10-28 07:24:16', '2023-10-28 05:09:29');
 
 -- --------------------------------------------------------
 
@@ -282,22 +264,6 @@ INSERT INTO `registration` (`image`, `first_name`, `last_name`, `contact`, `emai
 ('default', 'Gouri', 'Raj', '6235273701', 'gourirajc@gmail.com', '2006-06-06', 'Chavarukulangara', 'Periyappuram', 'Ernakulam', '686667', 'Kerala'),
 ('moncygmailcom.jpg', 'Moncy', 'Francis', '8945214788', 'moncy@gmail.com', '2003-09-11', 'moncyy', 'Muvattupuzha', 'Ernakulam', '687543', 'kerala');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `website_review`
---
-
-CREATE TABLE `website_review` (
-  `review_id` int(11) NOT NULL,
-  `name` varchar(40) NOT NULL,
-  `phone_no` varchar(20) NOT NULL,
-  `email_id` varchar(40) NOT NULL,
-  `message` varchar(100) NOT NULL,
-  `date` date NOT NULL,
-  `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Indexes for dumped tables
 --
@@ -307,12 +273,6 @@ CREATE TABLE `website_review` (
 --
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`booking_id`);
-
---
--- Indexes for table `car_photo`
---
-ALTER TABLE `car_photo`
-  ADD PRIMARY KEY (`image_id`);
 
 --
 -- Indexes for table `complaint`
@@ -357,12 +317,6 @@ ALTER TABLE `registration`
   ADD PRIMARY KEY (`email_id`);
 
 --
--- Indexes for table `website_review`
---
-ALTER TABLE `website_review`
-  ADD PRIMARY KEY (`review_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -371,12 +325,6 @@ ALTER TABLE `website_review`
 --
 ALTER TABLE `booking`
   MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
-
---
--- AUTO_INCREMENT for table `car_photo`
---
-ALTER TABLE `car_photo`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `complaint`
@@ -394,7 +342,7 @@ ALTER TABLE `district`
 -- AUTO_INCREMENT for table `otp`
 --
 ALTER TABLE `otp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -407,12 +355,6 @@ ALTER TABLE `payment`
 --
 ALTER TABLE `product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
--- AUTO_INCREMENT for table `website_review`
---
-ALTER TABLE `website_review`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

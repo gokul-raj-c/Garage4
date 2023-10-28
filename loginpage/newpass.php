@@ -23,7 +23,7 @@ if($newpass==$confirmpass)
         icon: 'success',
         title: 'Password Reset!!!',
     }).then((result) => {
-        window.location.replace('./index.html');
+        window.location.replace('../login.html');
     });
    </script>
 <?php
