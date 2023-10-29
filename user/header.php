@@ -512,18 +512,18 @@ require("../connect.php");
         </a>
       </li><!-- End Login Page Nav -->
 
-      <li class="nav-item">
+      <!--<li class="nav-item">
         <a class="nav-link collapsed" href="invoice.php">
           <i class="bi bi-dash-circle"></i>
           <span>Invoice</span>
         </a>
-      </li><!-- End Error 404 Page Nav -->
+      </li><!-- End Error 404 Page Nav 
       <li class="nav-item">
         <a class="nav-link collapsed" href="receipt.php">
           <i class="bi bi-dash-circle"></i>
           <span>Invoice2</span>
         </a>
-      </li><!-- End Error 404 Page Nav--> 
+      </li><!-- End Error 404 Page Nav-
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="invoicethomas.php">

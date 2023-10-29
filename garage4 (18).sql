@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2023 at 12:10 PM
+-- Generation Time: Oct 29, 2023 at 11:50 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -50,7 +50,7 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `carname`, `category`, `color`, `capacity`, `rate`, `car_id`, `email`, `days`, `bdate`, `pick`, `dropd`, `total`, `status`, `payment`) VALUES
-(86, 'Benz', 'Premium', 'Black', '4', '5500', '19', 'gokulrajc63@gmail.com', '2', '2023-10-27', '2023-10-28', '2023-10-29', '11000', 1, 0);
+(88, 'Ambassador', 'Vintage', 'white', '4', '4000', '20', 'gourirajc@gmail.com', '2', '2023-10-29', '2023-10-30', '2023-10-31', '8000', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -126,12 +126,10 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`email_id`, `password`, `user_type`, `user_status`) VALUES
-('abc@gmail.com', 'abc1234', '1', '1'),
-('abcd@gmail.com', 'abcd1234', '1', '1'),
 ('admin1234@gmail.com', 'admin1234', '0', '1'),
 ('basilkreji@gmail.com', 'basil1234', '1', '1'),
 ('eldhowilson@gmail.com', 'eldho1234', '1', '1'),
-('gokulrajc63@gmail.com', 'kumaran', '1', '1'),
+('gokulrajc63@gmail.com', 'gokul1234', '1', '1'),
 ('gourirajc@gmail.com', 'gouri1234', '1', '1'),
 ('moncy@gmail.com', 'moncy1234', '1', '1');
 
@@ -197,7 +195,9 @@ INSERT INTO `payment` (`payment_id`, `booking_id`, `email`, `amount`, `paid_date
 (39, '83', 'gokulrajc63@gmail.com', '16000', '2023-10-25 17:38:29'),
 (40, '84', 'gokulrajc63@gmail.com', '28000', '2023-10-26 06:50:58'),
 (41, '85', 'gokulrajc63@gmail.com', '24000', '2023-10-27 08:20:05'),
-(42, '86', 'gokulrajc63@gmail.com', '11000', '2023-10-27 08:29:17');
+(42, '86', 'gokulrajc63@gmail.com', '11000', '2023-10-27 08:29:17'),
+(43, '87', 'gokulrajc63@gmail.com', '24000', '2023-10-29 06:31:32'),
+(44, '88', 'gourirajc@gmail.com', '8000', '2023-10-29 11:44:21');
 
 -- --------------------------------------------------------
 
@@ -229,8 +229,8 @@ INSERT INTO `product` (`product_id`, `image`, `name`, `category`, `model_year`, 
 (14, 'p4.jpg', 'Mini Cooper', 'Premium', '', '', '', 'Grey', '2', 'Maintained', '8000', 0),
 (17, 'n5.jpg', 'Polo', 'Other', '', '', '', 'Black', '4', 'Maintained', '4000', 0),
 (18, 'nn1.jpg', 'Swift', 'Other', '', '', '', 'White', '4', 'Maintained', '4000', 0),
-(19, 'p1.jpg', 'Benz', 'Premium', '', '', '', 'Black', '4', 'Well Maintained', '5500', 1),
-(20, 'v2.jpg', 'Ambassador', 'Vintage', '', '', '', 'white', '4', 'Maintained', '4000', 2),
+(19, 'p1.jpg', 'Benz', 'Premium', '', '', '', 'Black', '4', 'Well Maintained', '5500', 0),
+(20, 'v2.jpg', 'Ambassador', 'Vintage', '', '', '', 'white', '4', 'Maintained', '4000', 1),
 (21, 'n3.jpg', 'Fortuner', 'Premium', '', '', '', 'white', '4', 'Maintained', '6000', 0);
 
 -- --------------------------------------------------------
@@ -324,7 +324,7 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT for table `complaint`
@@ -348,7 +348,7 @@ ALTER TABLE `otp`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `product`

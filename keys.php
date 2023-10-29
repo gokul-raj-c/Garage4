@@ -1,3 +1,3 @@
 <?php
 
-$apikey = "rzp_test_rWSgaJR2BxzRC3";
+$apikey = "rzp_test_20kc3R5sawBiAc";

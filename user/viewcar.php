@@ -14,12 +14,12 @@ $username = $_SESSION['email_id'];
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Booking</h1>
+      <h1>Home</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="viewcar.php">Home</a></li>
-          <!--<li class="breadcrumb-item">Components</li>-->
-          <li class="breadcrumb-item active">Cars</li>
+          <li class="breadcrumb-item active"><a href="viewcar.php">Home</a></li>
+          <!--<li class="breadcrumb-item">Components</li>
+          <li class="breadcrumb-item active">Cars</li>-->
         </ol>
       </nav>
     </div>

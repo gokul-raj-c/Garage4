@@ -211,12 +211,13 @@ $arr1=mysqli_fetch_assoc($res1);
          <div class="invoice-company">
             <span class="pull-right">
             <button type="button" class="btn btn-dark" onclick="window.print();"><i class="fa fa-print"></i>
-                Print</button>
-            <button type="button" class="btn btn-danger" id="exportButton"><i class="fa fa-file-pdf-o"></i> Export as
-                PDF</button>
-            </span>
-         
-         </div>
+                Print As Pdf</button>
+                <div class="btn-group">
+                      <a href="pdf1.php?id=<?php echo $arr1['booking_id'] ?>" class="btn btn-danger btn">Send Receipt Email</a>
+                        
+                      </div>
+</div>
+
          <!-- end invoice-company -->
          <!-- begin invoice-header -->
          <div class="invoice-header">

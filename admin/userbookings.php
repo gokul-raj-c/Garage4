@@ -60,7 +60,7 @@ include("header.php");
                         
                       </div>
                       <div class="btn-group">
-                      <a href="php/cancelbooking.php?id=<?php echo $arr['booking_id'] ?>" class="btn btn-success btn">View User Details</a>
+                      <a href="viewuserdetails.php?email=<?php echo $arr['email'] ?>" class="btn btn-success btn">View User Details</a>
                         
                       </div></p>
 
