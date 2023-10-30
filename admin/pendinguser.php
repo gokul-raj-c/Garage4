@@ -46,7 +46,8 @@ include("header.php");
                   <th scope="col">DOB</th>
 
                   <th scope="col">Address</th>
-                 <th scope="col">Action</th>
+                  <th scope="col">Action</th>
+                 
                   
                   <!--<th scope="col">Bloodgroup</th>
                   <th scope="col">Action</th>-->
@@ -55,7 +56,7 @@ include("header.php");
               <tbody>
 
                 <?php
-                $sql = "SELECT * FROM `registration` WHERE email_id IN (SELECT email_id FROM `login` WHERE user_status = 1)";
+                $sql = "SELECT * FROM `registration` WHERE email_id IN (SELECT email_id FROM `login` WHERE user_status = 0)";
 
 
                 $data = select_data($sql);
@@ -91,8 +92,8 @@ include("header.php");
                     </td>
                     <td>
                       <div class="btn-group">
-                        <a href="php/verifyuser.php?email=<?php echo $row['email_id']; ?>&s=-1" class="btn btn-warning btn-sm">Suspend</a>
-                        
+                        <a href="php/verifyuser.php?email=<?php echo $row['email_id']; ?>&s=1" class="btn btn-success btn-sm">Approve</a>
+                        <a href="php/verifyuser.php?email=<?php echo $row['email_id']; ?>&s=-2" class="btn btn-danger btn-sm">Reject</a>
                       </div>
                     </td>
                    

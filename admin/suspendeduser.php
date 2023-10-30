@@ -55,7 +55,7 @@ include("header.php");
               <tbody>
 
                 <?php
-                $sql = "SELECT * FROM `registration` WHERE email_id IN (SELECT email_id FROM `login` WHERE user_status = 1)";
+                $sql = "SELECT * FROM `registration` WHERE email_id IN (SELECT email_id FROM `login` WHERE user_status = -1)";
 
 
                 $data = select_data($sql);
@@ -89,12 +89,7 @@ include("header.php");
                       <?php echo $row['pincode'] ?>,
                       <?php echo $row['state'] ?>
                     </td>
-                    <td>
-                      <div class="btn-group">
-                        <a href="php/verifyuser.php?email=<?php echo $row['email_id']; ?>&s=-1" class="btn btn-warning btn-sm">Suspend</a>
-                        
-                      </div>
-                    </td>
+                    
                    
                   </tr>
 

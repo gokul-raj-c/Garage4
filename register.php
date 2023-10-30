@@ -26,7 +26,7 @@
 							<span class="fa fa-user" aria-hidden="true"></span> <input type="text" name="lname" placeholder="Last Name" required />
 						</div>
 						<div class="form-input">
-							<span class="fa fa-phone" aria-hidden="true"></span> <input type="text" name="contact" placeholder="Contact" required />
+							<span class="fa fa-phone" aria-hidden="true"></span> <input type="text" name="contact" placeholder="Contact" pattern="^\d{10}$" required />
 						</div>
 						<div class="form-input">
 							<span class="fa fa-envelope" aria-hidden="true"></span> <input type="email" name="email" placeholder="Email" required />
@@ -35,10 +35,10 @@
 							<span class="fa fa-birthday-cake" aria-hidden="true"></span> <input type="date" name="dateofbirth" placeholder="DOB" required />
 						</div>
 						<div class="form-input">
-							<span class='fa fa-home' aria-hidden="true"></span> <input type="text" name="housename" placeholder="Housename" required />
+							<span class='fa fa-home' aria-hidden="true"></span> <input type="text" name="housename" placeholder="Housename" pattern="^[A-Za-z]+$" required />
 						</div>
 						<div class="form-input">
-							<span class="fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="streetname" placeholder="Streetname" required />
+							<span class="fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="streetname" placeholder="Streetname" pattern="^[A-Za-z]+$" required />
 						</div>
 						<div class="form-input">
 						<span class="fa fa-map-marker" aria-hidden="true"></span>
@@ -62,17 +62,20 @@
                            </select>
 						</div>
 						<div class="form-input">
-							<span class="fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="pincode" placeholder="Pincode" required />
+							<span class="fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="pincode" pattern="^\d{6}$" placeholder="Pincode" required />
+						</div>
+						Pincode must have only 6 numbers
+						<div class="form-input">
+							<span class="fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="state" placeholder="State" pattern="^[A-Za-z]+$" required />
 						</div>
 						<div class="form-input">
-							<span class="fa fa-map-marker" aria-hidden="true"></span> <input type="text" name="state" placeholder="State" required />
-						</div>
-						<div class="form-input">
-							<span class="fa fa-lock" aria-hidden="true"></span><input type="password" name="password" placeholder="Password"
+							<span class="fa fa-lock" aria-hidden="true"></span><input type="password" name="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" placeholder="Password"
 								required />
+								
 						</div>
+						Password must have at least 8 characters with 1 special character and 1 capital letter
 						<div class="form-input">
-							<span class="fa fa-lock" aria-hidden="true"></span> <input type="password" name="cpassword" placeholder="Confirm Password"
+							<span class="fa fa-lock" aria-hidden="true"></span> <input type="password" name="cpassword" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$" placeholder="Confirm Password"
 								required />
 						</div>
 						

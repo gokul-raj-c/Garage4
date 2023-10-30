@@ -26,7 +26,7 @@ if(isset($_POST["submit"])){
     
     $sql="INSERT INTO registration (first_name,last_name,contact,email_id,date_of_birth,house_name,street_name,district,pincode,state)
      VALUES ('$fname','$lname','$contact','$email','$dateofbirth','$hname','$sname','$district','$pincode','$state')";
-    $sql2="INSERT INTO  login (email_id,password,user_type,user_status) VALUES ('$email','$password',1,1)";
+    $sql2="INSERT INTO  login (email_id,password,user_type,user_status) VALUES ('$email','$password','1','0')";
 if(insert_data($sql) && insert_data($sql2)) { 
         ?>
         <script>
