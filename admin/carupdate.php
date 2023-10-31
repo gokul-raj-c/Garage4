@@ -114,7 +114,7 @@ $id=$_GET['id'];
     </section>
     <?php 
 
-include 'footer.html';
+include 'footer.php';
 
 ?>
 <script type="text/javascript">

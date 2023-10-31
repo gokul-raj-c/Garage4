@@ -263,7 +263,7 @@ require("../connect.php");
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" onclick="logout()">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Log Out</span>
               </a>
@@ -445,21 +445,21 @@ require("../connect.php");
               <i class="bi bi-circle"></i><span>User List</span>
             </a>
           </li>
-          <li>
+          <!--<li>
             <a href="pendinguser.php">
               <i class="bi bi-circle"></i><span>Pending Users</span>
             </a>
-          </li>
+          </li>-->
           <li>
             <a href="suspendeduser.php">
               <i class="bi bi-circle"></i><span>Suspended Users</span>
             </a>
           </li>
-          <li>
+          <!--<li>
             <a href="rejecteduser.php">
               <i class="bi bi-circle"></i><span>Rejected Users</span>
             </a>
-          </li>
+          </li>-->
          
         </ul>
       </li><!-- End Components Nav -->
@@ -542,12 +542,12 @@ require("../connect.php");
           <span>Add Cars</span>
         </a>
       </li>
-      <li class="nav-item">
+      <!--<li class="nav-item">
         <a class="nav-link collapsed" href="mainindex.php">
           <i class="bi bi-card-list"></i>
           <span>Main Index</span>
         </a>
-      </li>
+      </li>-->
       <li class="nav-item">
         <a class="nav-link collapsed" href="viewcar.php">
           <i class="bi bi-card-list"></i>
@@ -565,21 +565,27 @@ require("../connect.php");
       <li class="nav-item">
         <a class="nav-link collapsed" href="userbookings.php">
           <i class="bi bi-card-list"></i>
+          <span>Current Bookings</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="bookinghistory.php">
+          <i class="bi bi-card-list"></i>
           <span>Bookings</span>
         </a>
       </li><!-- End Register Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="./php/logout.php">
+        <a class="nav-link collapsed" onclick="logout()">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Log Out</span>
         </a>
-      </li><!-- End Login Page Nav 
+      </li><!-- End Login Page Nav --
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
+        <a class="nav-link collapsed" href="order.php">
           <i class="bi bi-dash-circle"></i>
-          <span>Error 404</span>
+          <span>Orders</span>
         </a>
       </li><!-- End Error 404 Page Nav 
 

@@ -191,7 +191,7 @@ include("header.php");
 </html>
 <?php 
 
-include 'footer.html';
+include 'footer.php';
 
 ?>
 <script type="text/javascript">

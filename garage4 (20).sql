@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2023 at 04:03 PM
+-- Generation Time: Oct 31, 2023 at 04:03 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -50,7 +50,10 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `carname`, `category`, `color`, `capacity`, `rate`, `car_id`, `email`, `days`, `bdate`, `pick`, `dropd`, `total`, `status`, `payment`) VALUES
-(89, 'Audi', 'Premium', 'Blue', '4', '7000', '13', 'gokulrajc63@gmail.com', '4', '2023-10-30', '2023-10-31', '2023-11-03', '28000', 1, 0);
+(90, 'Fortuner', 'Premium', 'white', '4', '6000', '21', 'gokulrajc63@gmail.com', '4', '2023-10-31', '2023-11-01', '2023-11-04', '24000', 2, 0),
+(91, 'Polo', 'Other', 'Black', '4', '4000', '17', 'gokulrajc63@gmail.com', '2', '2023-10-31', '2023-11-02', '2023-11-03', '8000', 2, 0),
+(92, 'Audi', 'Premium', 'Blue', '4', '7000', '13', 'gokulrajc63@gmail.com', '3', '2023-10-31', '2023-11-02', '2023-11-04', '21000', 1, 0),
+(93, 'Swift', 'Other', 'White', '4', '4000', '18', 'gokulrajc63@gmail.com', '9', '2023-10-31', '2023-11-03', '2023-11-11', '36000', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -68,6 +71,13 @@ CREATE TABLE `complaint` (
   `reply` varchar(10) NOT NULL,
   `message` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `complaint`
+--
+
+INSERT INTO `complaint` (`complaint_id`, `title`, `description`, `type`, `date`, `email_id`, `reply`, `message`) VALUES
+(12, 'Car Working', 'should be checked properly', 'car', '2023-10-31', 'gokulrajc63@gmail.com', '0', '');
 
 -- --------------------------------------------------------
 
@@ -165,7 +175,11 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`payment_id`, `booking_id`, `email`, `amount`, `paid_date`) VALUES
-(45, '89', 'gokulrajc63@gmail.com', '28000', '2023-10-30 15:48:11');
+(45, '89', 'gokulrajc63@gmail.com', '28000', '2023-10-30 15:48:11'),
+(46, '90', 'gokulrajc63@gmail.com', '24000', '2023-10-31 06:03:38'),
+(47, '91', 'gokulrajc63@gmail.com', '8000', '2023-10-31 06:55:15'),
+(48, '92', 'gokulrajc63@gmail.com', '21000', '2023-10-31 14:28:32'),
+(49, '93', 'gokulrajc63@gmail.com', '36000', '2023-10-31 16:01:22');
 
 -- --------------------------------------------------------
 
@@ -196,7 +210,7 @@ INSERT INTO `product` (`product_id`, `image`, `name`, `category`, `model_year`, 
 (13, 'p3.jpg', 'Audi', 'Premium', '', '', '', 'Blue', '4', 'Maintained', '7000', 1),
 (14, 'p4.jpg', 'Mini Cooper', 'Premium', '', '', '', 'Grey', '2', 'Maintained', '8000', 0),
 (17, 'n5.jpg', 'Polo', 'Other', '', '', '', 'Black', '4', 'Maintained', '4000', 0),
-(18, 'nn1.jpg', 'Swift', 'Other', '', '', '', 'White', '4', 'Maintained', '4000', 0),
+(18, 'nn1.jpg', 'Swift', 'Other', '', '', '', 'White', '4', 'Maintained', '4000', 1),
 (19, 'p1.jpg', 'Benz', 'Premium', '', '', '', 'Black', '4', 'Well Maintained', '5500', 0),
 (20, 'v2.jpg', 'Ambassador', 'Vintage', '', '', '', 'white', '4', 'Maintained', '4000', 1),
 (21, 'n3.jpg', 'Fortuner', 'Premium', '', '', '', 'white', '4', 'Maintained', '6000', 0);
@@ -290,13 +304,13 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `complaint_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `complaint_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -314,7 +328,7 @@ ALTER TABLE `otp`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `product`

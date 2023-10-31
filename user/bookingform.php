@@ -237,6 +237,6 @@ $id=$_GET['id'];
     </section>
     <?php 
 
-include 'footer.html';
+include 'footer.php';
 
 ?>

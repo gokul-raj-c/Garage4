@@ -11,12 +11,12 @@ include("header.php");
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Complaints</h1>
+      <h1>History</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
-          <li class="breadcrumb-item">Manage Complaints</a></li>
-          <li class="breadcrumb-item active">Pending Complaints</li>
+          <li class="breadcrumb-item">History</a></li>
+          <li class="breadcrumb-item active">Booking History</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -24,7 +24,7 @@ include("header.php");
     <div class="card"> 
           <div class="card-body"> 
             <h5 class="card-title"> 
-            Your Complaint List
+            Your Booking History
             </h5>
 
     <section class="section dashboard">
@@ -40,19 +40,20 @@ include("header.php");
                 <thead>
                   <tr>
                     <th scope="col">Slno.</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Car Name</th>
+                    <th scope="col">Booked Date</th>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Amount Payed</th>
+                    <th scope="col">Status</th>
+                   
                 
                   </tr>
                 </thead>
                 <tbody>
  
                 <?php 
-               $sql = "SELECT * FROM complaint where  reply='0' ";
+               $sql = "select * from booking where email='$username'";
 
 
                 $data=select_data($sql);
@@ -64,17 +65,25 @@ include("header.php");
                   ?>
                   <tr>
                   <th scope='row'><?php echo $n++; ?></th>
-                 <td><?php echo  $row['title'] ?></td>
-                 <td> <?php echo $row['description'] ?></td>
-                 <td><?php echo $row['type'] ?></td>
-                 <td><?php echo $row['date']?></td>
-                 <td> <?php echo $row['email_id']  ?></td>
+                 <td><?php echo  $row['carname'] ?></td>
+                 <td> <?php echo $row['bdate'] ?></td>
+                 <td><?php echo $row['pick'] ?></td>
+                 <td><?php echo $row['dropd']?></td>
+                 <td> <?php echo $row['total']  ?></td>
                  <td>
+                                <?php
+                                    if ($row['status'] == 1)
+                                        echo "<p style='color: green;'>Booked</p>";
+                                    else if ($row['status'] == 2)
+                                        echo "<p style='color: red;'>Dropped</p>";
+                                    ?>
+                            </td>
+                 <!--<td>
                       <div class="btn-group">
                         <a href="replay.php?id=<?php echo $row['complaint_id'] ?>" class="btn btn-success btn-sm">Reply</a>
                         
                       </div>
-                    </td>
+                    </td>-->
                  
                   <?php
                   }

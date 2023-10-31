@@ -32,7 +32,7 @@
             /*$sql2 = "insert into pro_order (email_id,product_id,order_date,quantity,payment_id) values ('$email','$product_id','$date','$quantity','$pay_id')";
             insert($sql2);*/
 
-            $sql3 = "DELETE FROM `booking` WHERE booking_id='$product_id'";
+            $sql3 = "UPDATE booking SET status=2 WHERE booking_id='$product_id'";
             update_data($sql3);
             $sql4 = "UPDATE product SET status=0 WHERE product_id='$car_id'";
             update_data($sql4);

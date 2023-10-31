@@ -74,5 +74,5 @@ $username = $_SESSION['email_id'];
     </main><!-- End #main -->
 
     <?php
-   include 'footer.html';
+   include 'footer.php';
     ?>

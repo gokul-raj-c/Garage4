@@ -276,7 +276,7 @@ require("../connect.php");
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="./php/logout.php">
+              <a class="dropdown-item d-flex align-items-center" onclick="logout()">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Log Out</span>
               </a>
@@ -504,9 +504,16 @@ require("../connect.php");
           <span>My Bookings</span>
         </a>
       </li><!-- End Register Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="userhistory.php">
+          <i class="bi bi-card-list"></i>
+          <span>My History</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="./php/logout.php">
+        <a class="nav-link collapsed"  onclick="logout()">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Log Out</span>
         </a>

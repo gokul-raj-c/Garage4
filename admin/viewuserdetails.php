@@ -292,6 +292,6 @@ include("header.php");
     </section>
     <?php 
 
-include 'footer.html';
+include 'footer.php';
 
 ?>

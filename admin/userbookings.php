@@ -85,6 +85,6 @@ include("header.php");
     </main><!-- End #main -->
 
     <?php
-   include 'footer.html';
+   include 'footer.php';
 
 ?>

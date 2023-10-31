@@ -129,6 +129,6 @@ include("header.php");
 
 
 
-include 'footer.html';
+include 'footer.php';
 
 ?>

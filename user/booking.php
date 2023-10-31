@@ -77,7 +77,7 @@ $bbid=$_GET['id'];
     </main><!-- End #main -->
 
     <?php
-   include 'footer.html';
+   include 'footer.php';
    require('../keys.php');
 ?>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>

@@ -48,6 +48,7 @@ include("header.php");
                     <th scope="col">Type</th>
                     <th scope="col">Date</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Action</th>
                     <th scope="col">Reply</th>
                 
                   </tr>
@@ -72,6 +73,14 @@ include("header.php");
                  <td><?php echo $row['type'] ?></td>
                  <td><?php echo $row['date']?></td>
                  <td> <?php echo $row['email_id']  ?></td>
+                 <td>
+                                <?php
+                                    if ($row['reply'] == 0)
+                                        echo "<p style='color: red;'>Pending</p>";
+                                    else if ($row['reply'] == 1)
+                                        echo "<p style='color: green;'>Viewed</p>";
+                                    ?>
+                            </td>
                  <td> <?php echo $row['message']  ?></td>
                  
                  
@@ -104,5 +113,5 @@ include("header.php");
 <?php 
 
 
-require 'footer.html';
+require 'footer.php';
 ?>

@@ -70,21 +70,23 @@ require '../../phpmailer/src/SMTP.php';
         $mail->addAddress($email);
         $mail->isHTML(true);
         $mail->Subject = "Booking Successfull";
-        $mail->Body = "
-        <html>
-        <body>
-        Hi,<br>
-        Your booking from Garage4 has been placed successfully. Please find the order ids below.
-        <br><br>".$orders."
-        <br><br>
-        Thank You<br>
-        Team GARAGE4
-        
-        </body>
-        </html>
-        ";
-    
-        $mail->send();
+        $message = file_get_contents('../../mail-templates/payment.html'); // Load your HTML content
+
+#
+     // Replace placeholders with actual dynamic data
+   
+    #$currentDate = date('Y-m-d');
+    $message = str_replace('{{amt}}', $amt, $message);
+    $message = str_replace('{{id}}', $bid, $message);
+   
+
+    $mail->Body = $message;
+// #die();
+//     $mail->Body = $message;
+    $mail->AltBody = 'If you cannot view this email, please contact support.';
+
+    // Send the email
+    $mail->send();
     
 
         }

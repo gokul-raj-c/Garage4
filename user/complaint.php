@@ -123,6 +123,6 @@ include("header.php");
 
 
 
-require 'footer.html';
+require 'footer.php';
 
 ?>
