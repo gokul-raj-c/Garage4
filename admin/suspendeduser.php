@@ -89,7 +89,13 @@ include("header.php");
                       <?php echo $row['pincode'] ?>,
                       <?php echo $row['state'] ?>
                     </td>
-                    
+
+                    <td>
+                      <div class="btn-group">
+                        <a href="php/verifyuser.php?email=<?php echo $row['email_id']; ?>&s=1" class="btn btn-success btn-sm">Approve</a>
+                        
+                      </div>
+                    </td>
                    
                   </tr>
 

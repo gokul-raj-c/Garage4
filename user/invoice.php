@@ -197,10 +197,10 @@ $arr1=mysqli_fetch_assoc($res1);
 <body>
 <div class="toolbar hidden-print sticky-top" style="background-color: white;padding: 15px;" id="print-tools">
         <div class="text-end" style="display: flex;justify-content: flex-end;">
-            <button type="button" class="btn btn-dark" onclick="window.print();"><i class="fa fa-print"></i>
+            <button type="button" class="btn btn-danger" onclick="window.print();"><i class="fa fa-print"></i>
                 Print</button>
-            <button type="button" class="btn btn-danger" id="exportButton"><i class="fa fa-file-pdf-o"></i> Export as
-                PDF</button>
+            <!--<button type="button" class="btn btn-danger" id="exportButton"><i class="fa fa-file-pdf-o"></i> Export as
+                PDF</button>-->
                 <div class="btn-group">
                       <a href="pdf1.php?id=<?php echo $arr1['booking_id'] ?>" class="btn btn-dark">Send Receipt Email</a>
                         

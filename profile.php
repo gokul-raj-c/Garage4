@@ -30,25 +30,10 @@ include("header.php");
         <div class="col-xl-4">
 
           <div class="card">
-          <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-<img src="../uploads/profile/<?php echo $arr['image'] ?>" alt="Profile" class="rounded-circle" style="min-width:250px;">
-
-<div style="margin-left: 450px;margin-top: -40px; z-index: 99;">
-  <label class="btn-bs-file btn btn-sm btn-primary">
-    <i class="bi bi-camera" id="icon">
-    </i>
-
-
-  </label>
-
-  <form id="profrm" name="profrm" method="post" style="visibility: hidden;">
-    <input type="file" name="propic" id="propic" onchange="return(imgCheck())" />
-  </form>
-</div>
-<h2 style="text-transform:capitalize;" style="margin-top:-50px">
-  <?php echo $arr['first_name'] . " " . $arr['last_name']; ?>
-</h2>
+              <img src="assets/img/default.jpg" alt="Profile" class="rounded-circle">
+              <h2><?php echo $arr['first_name'];?> <?php echo $arr['last_name'];?></h2>
               <h3>Customer</h3>
               <!--<div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -306,125 +291,6 @@ include("header.php");
         </div>
       </div>
     </section>
-    <script>
-    // alert("hello");
-
-
-
-    // Get references to the input and button elements
-    const inputElement = document.getElementById("propic");
-    const buttonElement = document.getElementById("icon");
-
-    // Add a click event listener to the button
-    buttonElement.addEventListener("click", function () {
-        // Trigger a click event on the input element
-        inputElement.click();
-    });
-
-    function imgCheck() {
-
-
-
-
-        var form = ['png', 'jpg', 'jpeg'];
-        var x = document.getElementById("propic");
-
-        if ('files' in x) {
-
-
-
-
-            var file = x.files[0];
-            if ('name' in file && 'size' in file) {
-                var name = file.name;
-                // alert(name);
-
-                var frm = name.substring(name.indexOf(".") + 1);
-
-                var sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
-
-                // alert(file.height);
-
-                // alert(width);
-                if (!form.includes(frm)) {
-                    Swal.fire({
-                        title: "Upload Failed",
-                        text: "Invalid File Format",
-                        icon: "error",
-                        timer: 1500,
-                        showConfirmButton: false,
-                        didClose: () => {
-                            window.location.reload(true);
-                        }
-                    });
-                    return false;
-                }
-                else if (!(sizeInMB < 1)) {
-                    Swal.fire({
-                        title: "Upload Failed",
-                        text: "Size exceeds 1MB",
-                        icon: "error",
-                        timer: 1500,
-                        showConfirmButton: false,
-                        didClose: () => {
-                            window.location.reload(true);
-                        }
-                    });
-                    return false;
-                }
-                else {
-
-
-                    var fd = new FormData();
-                    var files = $('#propic')[0].files[0];
-                    fd.append('pro', files);
-                    $.ajax({
-                        type: 'post',
-                        url: 'php/imagecheck.php',
-                        data: fd,
-                        processData: false,
-                        contentType: false,
-                        success: function (ret) {
-                            var res = ret.trim();
-
-                            if (res == "1") {
-                                // alert("Success");
-                                Swal.fire({
-                                    title: "Upload Successfull",
-                                    text: "Profile Image Updated",
-                                    icon: "success",
-                                    timer: 1500,
-                                    showConfirmButton: false,
-                                    didClose: () => {
-                                        window.location.reload(true);
-                                    }
-                                });
-                            }
-                            else {
-
-                                Swal.fire({
-                                    title: "Upload Failed",
-                                    text: "Profile Image Failed",
-                                    icon: "error",
-                                    timer: 1500,
-                                    showConfirmButton: false,
-                                    didClose: () => {
-                                        window.location.reload(true);
-                                    }
-                                });
-                            }
-
-                        }
-                    });
-                }
-            }
-        }
-
-
-    }
-
-    document.getElementById("dist").value = "<?php echo $user['district'] ?>";
-</script>
     <?php 
 
 include 'footer.php';

@@ -50,7 +50,8 @@ include("header.php");
               <div class="info-box card">
                 <i class="bi bi-envelope"></i>
                 <h3>Email Us</h3>
-                <p>garage4@gmail.com<br>garage4@gmail.com</p>
+                <p>teamgarage4web@gmail.com<br> </p><br>
+                <p></p>
               </div>
             </div>
             <div class="col-lg-6">

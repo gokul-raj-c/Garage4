@@ -2,8 +2,10 @@
 
 require("../connect.php");
 
-   /*$username = $_SESSION['email_id'];*/
-   
+   $username = $_SESSION['email_id'];
+   $sql="select * from registration where email_id='$username'" ;
+   $res=select_data($sql);
+   $arr=mysqli_fetch_assoc($res);
    ?>
 
 <!DOCTYPE html>
@@ -23,6 +25,13 @@ require("../connect.php");
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+
+  
+  <script type="text/javascript" src="php/swal/jquery.min.js"></script>
+  <script type="text/javascript" src="php/swal/bootstrap.min.js"></script>
+  <script type="text/javascript" src="php/swal/sweetalert2@11.js"></script>
+
+
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -38,6 +47,9 @@ require("../connect.php");
 
   <!-- Template Main CSS File -->
   <link href="assets/css/styleeee.css" rel="stylesheet">
+  
+  <!-- JQuery Ajax -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
@@ -53,7 +65,7 @@ require("../connect.php");
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="activeuser.php" class="logo d-flex align-items-center">
+      <a href="viewcar.php" class="logo d-flex align-items-center">
         <!--<img src="assets/img/logo1.png" alt="">-->
         <span class="d-none d-lg-block">GARAGE4</span>
       </a>
@@ -74,7 +86,7 @@ require("../connect.php");
           <a class="nav-link nav-icon search-bar-toggle " href="#">
             <i class="bi bi-search"></i>
           </a>
-        </li><!-- End Search Icon
+        </li><!-- End Search Icon--
 
         <li class="nav-item dropdown">
 
@@ -147,7 +159,7 @@ require("../connect.php");
               <a href="#">Show all notifications</a>
             </li>
 
-          </ul><!-- End Notification Dropdown Items -->
+          </ul><!-- End Notification Dropdown Items -
 
         </li><!-- End Notification Nav 
 
@@ -213,26 +225,27 @@ require("../connect.php");
               <a href="#">Show all messages</a>
             </li>
 
-          </ul><!-- End Messages Dropdown Items -->
+          </ul><!-- End Messages Dropdown Items -
 
         </li><!-- End Messages Nav -->
 
+      
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/default.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2"><h5>Admin</h5></span>
+          <img src="assets/img/default.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2"><h5><?php echo $arr['first_name'] . " " . $arr['last_name']; ?></h5></span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-           <h4>Admin</h4>
+           <h4><?php echo $arr['first_name'] . " " . $arr['last_name']; ?></h4>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
-            <!--<li>
+            <li>
               <a class="dropdown-item d-flex align-items-center" href="profile.php">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
@@ -283,7 +296,7 @@ require("../connect.php");
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="activeuser.php">
+        <a class="nav-link collapsed" href="viewcar.php">
           <i class="bi bi-grid"></i>
           <span>Home</span>
         </a>
@@ -291,12 +304,12 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Users List</span>
+              <i class="bi bi-circle"></i><span>Alerts</span>
             </a>
           </li>
           <li>
@@ -411,19 +424,19 @@ require("../connect.php");
             </a>
           </li>
         </ul>
-      </li>< End Tables Nav --
+      </li><!-- End Tables Nav 
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-person"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="activeuser.php">
-              <i class="bi bi-circle"></i><span>Active Users</span>
+            <a href="charts-chartjs.html">
+              <i class="bi bi-circle"></i><span>Chart.js</span>
             </a>
           </li>
-          <!--<li>
+          <li>
             <a href="charts-apexcharts.html">
               <i class="bi bi-circle"></i><span>ApexCharts</span>
             </a>
@@ -432,88 +445,30 @@ require("../connect.php");
             <a href="charts-echarts.html">
               <i class="bi bi-circle"></i><span>ECharts</span>
             </a>
-          </li>-
-        </ul>
-      </li> End Charts Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#user-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-person"></i><span>Manage Users</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="user-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="activeuser.php">
-              <i class="bi bi-circle"></i><span>User List</span>
-            </a>
           </li>
-          <!--<li>
-            <a href="pendinguser.php">
-              <i class="bi bi-circle"></i><span>Pending Users</span>
-            </a>
-          </li>-->
-          <li>
-            <a href="suspendeduser.php">
-              <i class="bi bi-circle"></i><span>Suspended Users</span>
-            </a>
-          </li>
-          <!--<li>
-            <a href="rejecteduser.php">
-              <i class="bi bi-circle"></i><span>Rejected Users</span>
-            </a>
-          </li>-->
-         
         </ul>
-      </li><!-- End Components Nav -->
-
-
+      </li><!-- End Charts Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-card-list"></i><span>Manage Complaints</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" >
+          <i class="bi bi-card-list"></i><span>Complaint</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          
           <li>
-            <a href="pendingcomplaint.php">
-              <i class="bi bi-circle"></i><span>Pending Complaints</span>
+          <a href="complaint.php">
+              <i class="bi bi-circle"></i><span>Create Complaint</span>
             </a>
           </li>
           <li>
-            <a href="viewedcomplaint.php">
-              <i class="bi bi-circle"></i><span>Viewed Complaints</span>
+          <a href="viewcomplaint.php">
+              <i class="bi bi-circle"></i><span>View Complaint</span>
             </a>
           </li>
-          <!--<li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>-->
         </ul>
       </li><!-- End Icons Nav -->
 
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-card-list"></i><span>Cars</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="addcars.php">
-              <i class="bi bi-circle"></i><span>Add Cars</span>
-            </a>
-          </li>
-          <li>
-            <a href="viewcar.php">
-              <i class="bi bi-circle"></i><span>View Cars</span>
-            </a>
-          </li>
-          <li>
-            <a href="blockedcars.php">
-              <i class="bi bi-circle"></i><span>Dropped Cars</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <!--<li class="nav-heading">Pages</li>-
+      <!--<li class="nav-heading">Pages</li>-->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="profile.php">
@@ -527,100 +482,60 @@ require("../connect.php");
           <i class="bi bi-question-circle"></i>
           <span>F.A.Q</span>
         </a>
-      </li><!-- End F.A.Q Page Nav -
+      </li><!-- End F.A.Q Page Nav 
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="complaint.php">
           <i class="bi bi-envelope"></i>
           <span>Complaint</span>
         </a>
-      </li><!-- End Contact Page Nav -
+      </li><!-- End Contact Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="contact.php">
           <i class="bi bi-telephone"></i>
           <span>Contact</span>
         </a>
-      </li><!-- End Contact Page Nav --
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="addcars.php">
-          <i class="bi bi-card-list"></i>
-          <span>Add Cars</span>
-        </a>
-      </li>
-      <!--<li class="nav-item">
-        <a class="nav-link collapsed" href="mainindex.php">
-          <i class="bi bi-card-list"></i>
-          <span>Main Index</span>
-        </a>
-      </li>--
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="viewcar.php">
-          <i class="bi bi-card-list"></i>
-          <span>View Cars</span>
-        </a>
-      </li><!-- End Contact Page Nav --
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="blockedcars.php">
-          <i class="bi bi-card-list"></i>
-          <span>Blocked Cars</span>
-        </a>
       </li><!-- End Contact Page Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-navii" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-card-list"></i><span>Bookings</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-navii" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="userbookings.php">
-              <i class="bi bi-circle"></i><span>Current Bookings</span>
-            </a>
-          </li>
-          <li>
-            <a href="bookinghistory.php">
-              <i class="bi bi-circle"></i><span>All Bookings</span>
-            </a>
-          </li>
-          <!--<li>
-            <a href="blockedcars.php">
-              <i class="bi bi-circle"></i><span>Blocked Cars</span>
-            </a>
-          </li>-->
-        </ul>
-      </li><!-- End Tables Nav -->
-
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="cardetails.php">
+        <a class="nav-link collapsed" href="mybookings.php">
           <i class="bi bi-card-list"></i>
-          <span>Car Details</span>
+          <span>My Bookings</span>
         </a>
       </li><!-- End Register Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="service.php">
+        <a class="nav-link collapsed" href="userhistory.php">
           <i class="bi bi-card-list"></i>
-          <span>Service</span>
+          <span>My History</span>
         </a>
       </li><!-- End Register Page Nav -->
 
+
       <li class="nav-item">
-        <a class="nav-link collapsed" onclick="logout()">
+        <a class="nav-link collapsed"  onclick="logout()">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Log Out</span>
         </a>
-      </li><!-- End Login Page Nav --
+      </li><!-- End Login Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="order.php">
+      <!--<li class="nav-item">
+        <a class="nav-link collapsed" href="invoice.php">
           <i class="bi bi-dash-circle"></i>
-          <span>Orders</span>
+          <span>Invoice</span>
         </a>
       </li><!-- End Error 404 Page Nav 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="receipt.php">
+          <i class="bi bi-dash-circle"></i>
+          <span>Invoice2</span>
+        </a>
+      </li><!-- End Error 404 Page Nav-
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
+        <a class="nav-link collapsed" href="invoicethomas.php">
           <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
+          <span>invoice3</span>
         </a>
       </li><!-- End Blank Page Nav -->
 

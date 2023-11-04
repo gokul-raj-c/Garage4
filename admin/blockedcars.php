@@ -19,13 +19,13 @@ $username = $_SESSION['email_id'];
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
           <!--<li class="breadcrumb-item">Components</li>-->
-          <li class="breadcrumb-item active">Blocked Cars</li>
+          <li class="breadcrumb-item active">Dropped Cars</li>
         </ol>
       </nav>
     </div>
 
             <?php
-            $sql = "select * from product WHERE status='2'";
+            $sql = "select * from product WHERE status='-1'";
             $res = select_data($sql);
             while ($row = mysqli_fetch_assoc($res)) {
             ?>
@@ -52,7 +52,7 @@ $username = $_SESSION['email_id'];
                         
                       </div>-->
                       <div class="btn-group">
-                      <a href="php/removeblock.php?id=<?php echo $row['product_id'] ?>" class="btn btn-danger btn">Delete</a>
+                      <a href="php/removebooking.php?id=<?php echo $row['product_id'] ?>" class="btn btn-danger btn">Add To View</a>
                         
                       </div></p>
 

@@ -52,6 +52,19 @@ function count_data($sql)
   else
     return False;
 }
+
+function num($sql)
+{
+   global $conn;
+   $result = mysqli_query($conn, $sql);
+   if ($result) {
+      $numrow = mysqli_num_rows($result);
+      return $numrow;
+   } else {
+      return false;
+   }
+}
+
 function send_mail($email, $title, $body) {
   if (mail($email, $title, $body, "From: Garage4<teamgarage4web@gmail.com>\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UISO-8859-1\r\n"))
       return 1;
