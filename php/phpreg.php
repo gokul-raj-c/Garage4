@@ -24,6 +24,7 @@
     $state=$_POST['state'];
     $password=$_POST['password'];
     $cpassword=$_POST['cpassword'];
+    $date = date("Y-m-d"); 
 
     $sql1 = "SELECT *from registration where email_id='$email'";
     $result = $conn->query($sql1);
@@ -47,8 +48,8 @@
     {
         if ($password == $cpassword) 
         {
-            $sql="INSERT INTO registration (first_name,last_name,contact,email_id,date_of_birth,house_name,street_name,district,pincode,state)
-            VALUES ('$fname','$lname','$contact','$email','$dateofbirth','$hname','$sname','$district','$pincode','$state')";
+            $sql="INSERT INTO registration (first_name,last_name,contact,email_id,date_of_birth,house_name,street_name,district,pincode,state,date_of_join)
+            VALUES ('$fname','$lname','$contact','$email','$dateofbirth','$hname','$sname','$district','$pincode','$state','$date')";
             if (insert_data($sql)) 
             {
                 //echo $sql;

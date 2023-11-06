@@ -52,7 +52,7 @@ $username = $_SESSION['email_id'];
                         
                       </div>-->
                       <div class="btn-group">
-                      <a href="php/removebooking.php?id=<?php echo $row['product_id'] ?>" class="btn btn-danger btn">Add To View</a>
+                      <a href="php/removebooking.php?id=<?php echo $row['product_id'] ?>" class="btn btn-success btn">Add To View</a>
                         
                       </div></p>
 

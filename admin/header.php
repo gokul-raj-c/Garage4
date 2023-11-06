@@ -283,7 +283,7 @@ require("../connect.php");
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="activeuser.php">
+        <a class="nav-link collapsed" href="index1.php">
           <i class="bi bi-grid"></i>
           <span>Home</span>
         </a>

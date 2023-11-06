@@ -12,6 +12,41 @@ include("header.php");
    /* $sql="select * from registration where email_id='$username'" ;
    $res=select_data($sql);
    $arr=mysqli_fetch_assoc($res);*/
+
+
+
+
+// -------------------
+// Payment Statistics
+// -------------------
+
+$paymentStatus = "Paid"; // Default order status is "Delivered"
+
+if (isset($_GET['paymentStatus'])) {
+    $paymentStatus =1;
+}
+
+$sqlPayment = "SELECT COUNT(*) AS payment_count FROM payment";
+$resultPayment = $conn->query($sqlPayment);
+
+$paymentCount = 0;
+
+if ($resultPayment) {
+    $rowPayment = $resultPayment->fetch_assoc();
+    $paymentCount = $rowPayment['payment_count'];
+}
+
+
+
+
+
+
+
+
+
+
+
+
    ?>
 
 
@@ -52,7 +87,7 @@ include("header.php");
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Sales <span>| Today</span></h5>
+                  <h5 class="card-title">Bookings <span>| Today</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -141,6 +176,71 @@ include("header.php");
 
             </div><!-- End Customers Card -->
 
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Product <span>| This Year</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>1244</h6>
+                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+
+             <!-- Payments Card --
+             <div class="col-xxl-4 col-xl-12">
+                            <div class="card info-card payments-card">
+                                <div class="filter">
+                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <li class="dropdown-header text-start">
+                                            <h6>Filter</h6>
+                                        </li>
+                                        <li><a class="dropdown-item" href="?paymentStatus=1"></a></li>
+                                        <!--<li><a class="dropdown-item" href="?paymentStatus=Paid">Paid</a></li>
+                                        <li><a class="dropdown-item" href="?paymentStatus=Failed">Failed</a></li>--
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Payments <span>| <?php echo $paymentStatus; ?></span></h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-cash-coin"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6><?php echo $paymentCount; ?></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End Payments Card -->
+
             <!-- Reports -->
             <div class="col-12">
               <div class="card">
@@ -159,7 +259,7 @@ include("header.php");
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Reports <span>/Today</span></h5>
+                  <h5 class="card-title">Products <span>/Today</span></h5>
 
                   <!-- Line Chart -->
                   <div id="reportsChart"></div>
@@ -374,7 +474,7 @@ include("header.php");
           </div>
         </div><!-- End Left side columns -->
 
-        <!-- Right side columns -
+        <!-- Right side columns -->
         <div class="col-lg-4">
 
           <!-- Recent Activity --
@@ -443,14 +543,14 @@ include("header.php");
                   <div class="activity-content">
                     Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
                   </div>
-                </div><!-- End activity item-->
+                </div><!-- End activity item--
 
               </div>
 
             </div>
-          </div><!-- End Recent Activity --
+          </div><!-- End Recent Activity -->
 
-          <!-- Budget Report --
+          <!-- Budget Report -->
           <div class="card">
             <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -524,7 +624,7 @@ include("header.php");
             </div>
           </div><!-- End Budget Report -->
 
-          <!-- Website Traffic -
+          <!-- Website Traffic -->
           <div class="card">
             <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -602,7 +702,7 @@ include("header.php");
             </div>
           </div><!-- End Website Traffic -->
 
-          <!-- News & Updates Traffic -
+          <!-- News & Updates Traffic -->
           <div class="card">
             <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
