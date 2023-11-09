@@ -92,7 +92,7 @@ $count14=mysqli_num_rows($data14);
   <h1>Dashboard</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item"><a href="index1.php">Home</a></li>
       <li class="breadcrumb-item active">Dashboard</li>
     </ol>
   </nav>
@@ -161,7 +161,7 @@ $count14=mysqli_num_rows($data14);
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people-fill"></i>
+                      <i class="bi bi-cart"></i>
                     </div>
                     <div class="ps-3">
                       <h6><?php echo $count7 ?></h6>
@@ -195,7 +195,7 @@ $count14=mysqli_num_rows($data14);
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people-fill"></i>
+                      <i class="bi bi-clipboard"></i>
                     </div>
                     <div class="ps-3">
                       <h6><?php echo $count11 ?></h6>
@@ -229,7 +229,7 @@ $count14=mysqli_num_rows($data14);
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people-fill"></i>
+                      <i class="bi bi-check-circle"></i>
                     </div>
                     <div class="ps-3">
                       <h6><?php echo $count8 ?></h6>
@@ -263,7 +263,7 @@ $count14=mysqli_num_rows($data14);
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people-fill"></i>
+                      <i class="bi bi-cash-coin"></i>
                     </div>
                     <div class="ps-3">
                       <h6><?php echo $totalAmount ?></h6>
@@ -297,7 +297,7 @@ $count14=mysqli_num_rows($data14);
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people-fill"></i>
+                      <i class="bi bi-cart-check"></i>
                     </div>
                     <div class="ps-3">
                       <h6><?php echo $count10 ?></h6>

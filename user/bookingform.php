@@ -55,7 +55,7 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Name</label>
                   <div class="col-sm-10">
-                  <input name="carname" type="text" class="form-control" id="carname" value=<?php echo $arr['name'];?>>
+                  <input name="carname" type="text" class="form-control" id="carname" value='<?php echo $arr['name'];?>'>
                   </div>
                 </div>
                 <div class="row mb-3">

@@ -17,7 +17,7 @@ $id=$_GET['id'];
       <h1>Update Car</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="viewcar.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="index1.php">Home</a></li>
           <li class="breadcrumb-item active">Update Car</li>
         </ol>
       </nav>
@@ -58,7 +58,7 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Name</label>
                   <div class="col-sm-10">
-                  <input name="carname" type="text" class="form-control" id="carname" value=<?php echo $arr['name'];?>>
+                  <input name="carname" type="text" class="form-control" id="carname" value='<?php echo $arr['name'];?>'>
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -88,7 +88,7 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Description</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" style="height: 100px"  id="description" name="description"  value=<?php echo $arr['description'];?>></textarea>
+                    <textarea class="form-control" style="height: 100px"  id="description" name="description"  value='<?php echo $arr['description'];?>'></textarea>
                   </div>
                 </div>
 

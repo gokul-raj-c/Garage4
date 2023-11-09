@@ -28,6 +28,13 @@ $username = $_SESSION['email_id'];
             $sql = "select * from product WHERE status='0'";
             $res = select_data($sql);
             while ($row = mysqli_fetch_assoc($res)) {
+
+
+              $crid=$row['product_id'];
+              $sql2="SELECT AVG(rating) AS average_rating FROM review WHERE car_id = '$crid' ";
+              $data2=select_data($sql2);
+              $avg=mysqli_fetch_assoc($data2)
+
             ?>
                 <div class="col-md-4" style="margin:0px;display: inline-block;">
                     <div class="card">
@@ -36,6 +43,9 @@ $username = $_SESSION['email_id'];
                         <h5 class="card-title"><</h5>
                         </div>-->
                         <div class="card-body">
+
+                        <p style="font-size: large;margin:0 0 5px;"> <span class="badge bg-success" style="color:white"><?php echo number_format($avg['average_rating'] , 1)?> <i class="bi bi-star-fill text-warning"></i></span></p>
+                           
                         <h5 class="card-title"><?php echo $row['name']; ?></h5>
                             <p class="card-text"><b>Category:</b> <?php echo $row['category']; ?></p>
                             <p class="card-text"><b>Color:</b> <?php echo $row['color']; ?></p>

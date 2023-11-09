@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2023 at 11:50 AM
+-- Generation Time: Nov 09, 2023 at 03:54 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -50,7 +50,14 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `carname`, `category`, `color`, `capacity`, `rate`, `car_id`, `email`, `days`, `bdate`, `pick`, `dropd`, `total`, `status`, `payment`) VALUES
-(88, 'Ambassador', 'Vintage', 'white', '4', '4000', '20', 'gourirajc@gmail.com', '2', '2023-10-29', '2023-10-30', '2023-10-31', '8000', 1, 0);
+(90, 'Fortuner', 'Premium', 'white', '4', '6000', '21', 'gokulrajc63@gmail.com', '4', '2023-10-31', '2023-11-01', '2023-11-04', '24000', 2, 0),
+(91, 'Polo', 'Other', 'Black', '4', '4000', '17', 'gokulrajc63@gmail.com', '2', '2023-10-31', '2023-11-02', '2023-11-03', '8000', 2, 0),
+(92, 'Audi', 'Premium', 'Blue', '4', '7000', '13', 'gokulrajc63@gmail.com', '3', '2023-10-31', '2023-11-02', '2023-11-04', '21000', 2, 0),
+(93, 'Swift', 'Other', 'White', '4', '4000', '18', 'gokulrajc63@gmail.com', '9', '2023-10-31', '2023-11-03', '2023-11-11', '36000', 2, 0),
+(94, 'Ambassador', 'Vintage', 'white', '4', '4000', '20', 'gokulrajc63@gmail.com', '5', '2023-11-04', '2023-11-05', '2023-11-09', '20000', 2, 0),
+(95, 'Fortuner', 'Premium', 'white', '4', '6000', '21', 'gokulrajc63@gmail.com', '4', '2023-11-05', '2023-11-06', '2023-11-09', '24000', 2, 0),
+(97, 'Polo', 'Other', 'Black', '4', '4000', '17', 'jerinjaimon1234@gmail.com', '3', '2023-11-06', '2023-11-06', '2023-11-08', '12000', 2, 0),
+(98, 'Benz', 'Premium', 'Black', '4', '5500', '19', 'gokulrajc63@gmail.com', '3', '2023-11-06', '2023-11-07', '2023-11-09', '16500', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -74,8 +81,7 @@ CREATE TABLE `complaint` (
 --
 
 INSERT INTO `complaint` (`complaint_id`, `title`, `description`, `type`, `date`, `email_id`, `reply`, `message`) VALUES
-(10, 'Website Performance', 'It is Not Working Properly', 'website', '2023-10-07', 'moncy@gmail.com', '1', 'We Will Fix It Soon'),
-(11, 'Car Working', 'viper not functioning', 'car', '2023-10-14', 'gourirajc@gmail.com', '1', 'we appologise');
+(12, 'Car Working', 'should be checked properly', 'car', '2023-10-31', 'gokulrajc63@gmail.com', '0', '');
 
 -- --------------------------------------------------------
 
@@ -126,12 +132,10 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`email_id`, `password`, `user_type`, `user_status`) VALUES
-('admin1234@gmail.com', 'admin1234', '0', '1'),
-('basilkreji@gmail.com', 'basil1234', '1', '1'),
-('eldhowilson@gmail.com', 'eldho1234', '1', '1'),
-('gokulrajc63@gmail.com', 'gokul1234', '1', '1'),
-('gourirajc@gmail.com', 'gouri1234', '1', '1'),
-('moncy@gmail.com', 'moncy1234', '1', '1');
+('gokulrajc63@gmail.com', 'Gokul123#', '1', '1'),
+('gourirajc@gmail.com', 'Gouri123#', '1', '1'),
+('jerinjaimon1234@gmail.com', 'Losangels@123', '1', '1'),
+('teamgarage4web@gmail.com', 'admin1234', '0', '1');
 
 -- --------------------------------------------------------
 
@@ -176,28 +180,15 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`payment_id`, `booking_id`, `email`, `amount`, `paid_date`) VALUES
-(23, '71', 'gokulrajc63@gmail.com', '14000', '2023-10-21 11:07:20'),
-(24, '72', 'gokulrajc63@gmail.com', '16000', '2023-10-21 11:27:55'),
-(25, '73', 'gokulrajc63@gmail.com', '36000', '2023-10-21 12:00:10'),
-(26, '73', 'gokulrajc63@gmail.com', '36000', '2023-10-21 12:02:08'),
-(27, '74', 'gokulrajc63@gmail.com', '16500', '2023-10-21 12:16:37'),
-(28, '75', 'gokulrajc63@gmail.com', '24000', '2023-10-21 12:35:05'),
-(29, '76', 'gokulrajc63@gmail.com', '8000', '2023-10-21 12:37:51'),
-(30, '77', 'gokulrajc63@gmail.com', '27500', '2023-10-25 07:04:27'),
-(31, '78', 'gokulrajc63@gmail.com', '35000', '2023-10-25 07:06:50'),
-(32, '78', 'gokulrajc63@gmail.com', '35000', '2023-10-25 07:06:57'),
-(33, '78', 'gokulrajc63@gmail.com', '35000', '2023-10-25 07:09:25'),
-(34, '79', 'gokulrajc63@gmail.com', '12000', '2023-10-25 08:41:42'),
-(35, '79', 'gokulrajc63@gmail.com', '12000', '2023-10-25 08:58:59'),
-(36, '80', 'gokulrajc63@gmail.com', '28000', '2023-10-25 16:45:39'),
-(37, '81', 'gokulrajc63@gmail.com', '16500', '2023-10-25 17:00:44'),
-(38, '82', 'gokulrajc63@gmail.com', '18000', '2023-10-25 17:28:00'),
-(39, '83', 'gokulrajc63@gmail.com', '16000', '2023-10-25 17:38:29'),
-(40, '84', 'gokulrajc63@gmail.com', '28000', '2023-10-26 06:50:58'),
-(41, '85', 'gokulrajc63@gmail.com', '24000', '2023-10-27 08:20:05'),
-(42, '86', 'gokulrajc63@gmail.com', '11000', '2023-10-27 08:29:17'),
-(43, '87', 'gokulrajc63@gmail.com', '24000', '2023-10-29 06:31:32'),
-(44, '88', 'gourirajc@gmail.com', '8000', '2023-10-29 11:44:21');
+(45, '89', 'gokulrajc63@gmail.com', '28000', '2023-10-30 15:48:11'),
+(46, '90', 'gokulrajc63@gmail.com', '24000', '2023-10-31 06:03:38'),
+(47, '91', 'gokulrajc63@gmail.com', '8000', '2023-10-31 06:55:15'),
+(48, '92', 'gokulrajc63@gmail.com', '21000', '2023-10-31 14:28:32'),
+(49, '93', 'gokulrajc63@gmail.com', '36000', '2023-10-31 16:01:22'),
+(50, '94', 'gokulrajc63@gmail.com', '20000', '2023-11-04 16:26:02'),
+(51, '95', 'gokulrajc63@gmail.com', '24000', '2023-11-05 06:24:19'),
+(52, '97', 'jerinjaimon1234@gmail.com', '12000', '2023-11-06 07:50:33'),
+(53, '98', 'gokulrajc63@gmail.com', '16500', '2023-11-06 16:51:11');
 
 -- --------------------------------------------------------
 
@@ -227,11 +218,12 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`product_id`, `image`, `name`, `category`, `model_year`, `brand`, `plate_number`, `color`, `capacity`, `description`, `amount`, `status`) VALUES
 (13, 'p3.jpg', 'Audi', 'Premium', '', '', '', 'Blue', '4', 'Maintained', '7000', 0),
 (14, 'p4.jpg', 'Mini Cooper', 'Premium', '', '', '', 'Grey', '2', 'Maintained', '8000', 0),
-(17, 'n5.jpg', 'Polo', 'Other', '', '', '', 'Black', '4', 'Maintained', '4000', 0),
+(17, 'n5.jpg', 'Polo', 'Other', '', '', '', 'Black', '4', 'Maintained', '4000', -1),
 (18, 'nn1.jpg', 'Swift', 'Other', '', '', '', 'White', '4', 'Maintained', '4000', 0),
 (19, 'p1.jpg', 'Benz', 'Premium', '', '', '', 'Black', '4', 'Well Maintained', '5500', 0),
-(20, 'v2.jpg', 'Ambassador', 'Vintage', '', '', '', 'white', '4', 'Maintained', '4000', 1),
-(21, 'n3.jpg', 'Fortuner', 'Premium', '', '', '', 'white', '4', 'Maintained', '6000', 0);
+(20, 'v2.jpg', 'Ambassador', 'Vintage', '', '', '', 'white', '4', 'Maintained', '4000', 0),
+(21, 'n3.jpg', 'Fortuner', 'Premium', '', '', '', 'white', '4', 'Maintained', '6000', 0),
+(22, 'p5.jpg', 'Range Rover', 'Premium', '', '', '', 'Red', '4', 'Maintained', '4900', 0);
 
 -- --------------------------------------------------------
 
@@ -250,19 +242,53 @@ CREATE TABLE `registration` (
   `street_name` varchar(30) NOT NULL,
   `district` varchar(20) NOT NULL,
   `pincode` varchar(6) NOT NULL,
-  `state` varchar(30) NOT NULL
+  `state` varchar(30) NOT NULL,
+  `date_of_join` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `registration`
 --
 
-INSERT INTO `registration` (`image`, `first_name`, `last_name`, `contact`, `email_id`, `date_of_birth`, `house_name`, `street_name`, `district`, `pincode`, `state`) VALUES
-('default', 'basil', 'k reji', '5588226699', 'basilkreji@gmail.com', '2023-09-07', 'cccc', 'yyyyy', 'Ernakulam', '686667', 'kerala'),
-('eldhowilsongmailcom.jpg', 'Eldho', 'Wilson', '9074288916', 'eldhowilson@gmail.com', '2003-04-22', 'Chakkalackal', 'Pampakkuda', 'Ernakulam', '686667', 'Kerala'),
-('gokulrajc63gmailcom.jpg', 'Gokul', 'Raj', '9061393951', 'gokulrajc63@gmail.com', '2003-04-11', 'Chavarukulangara(H)', 'Periyappuram', 'Ernakulam', '686667', 'Kerala'),
-('default', 'Gouri', 'Raj', '6235273701', 'gourirajc@gmail.com', '2006-06-06', 'Chavarukulangara', 'Periyappuram', 'Ernakulam', '686667', 'Kerala'),
-('moncygmailcom.jpg', 'Moncy', 'Francis', '8945214788', 'moncy@gmail.com', '2003-09-11', 'moncyy', 'Muvattupuzha', 'Ernakulam', '687543', 'kerala');
+INSERT INTO `registration` (`image`, `first_name`, `last_name`, `contact`, `email_id`, `date_of_birth`, `house_name`, `street_name`, `district`, `pincode`, `state`, `date_of_join`) VALUES
+('Screenshot 2023-11-06 114855.png', 'Gokul', 'Raj', '9061393951', 'gokulrajc63@gmail.com', '2003-04-11', 'chavarukulangara', 'periyappuram', 'Ernakulam', '686667', 'kerala', '2023-10-30'),
+('default.jpg', 'Gouri', 'Raj', '6235273701', 'gourirajc@gmail.com', '2006-06-06', 'chavarukulangara', 'periyappuram', 'Ernakulam', '686667', 'kerala', '2023-11-01'),
+('default.jpg', 'Jerin', 'Jaimon', '9072022540', 'jerinjaimon1234@gmail.com', '2023-11-06', 'peppathy', 'piravom', 'Ernakulam', '682313', 'Kerala', '2023-11-06');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `review_id` int(11) NOT NULL,
+  `car_id` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `review` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`review_id`, `car_id`, `email`, `rating`, `review`) VALUES
+(6, 19, 'gokulrajc63@gmail.com', 4, ''),
+(7, 17, 'jerinjaimon1234@gmail.com', 4, ''),
+(8, 19, 'gokulrajc63@gmail.com', 5, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `wishlist_id` int(11) NOT NULL,
+  `car_id` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -317,6 +343,18 @@ ALTER TABLE `registration`
   ADD PRIMARY KEY (`email_id`);
 
 --
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`review_id`);
+
+--
+-- Indexes for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`wishlist_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -324,13 +362,13 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `complaint_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `complaint_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `district`
@@ -348,13 +386,25 @@ ALTER TABLE `otp`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

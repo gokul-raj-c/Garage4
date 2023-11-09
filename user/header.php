@@ -233,7 +233,7 @@ require("../connect.php");
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <img src="../uploads/profile/<?php echo $arr['image'] ?>" alt="Profile" class="rounded-circle">
+          <img src="./uploads/profile/<?php echo $arr['image'] ?>" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2"><h5><?php echo $arr['first_name'] . " " . $arr['last_name']; ?></h5></span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -451,7 +451,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" >
-          <i class="bi bi-card-list"></i><span>Complaint</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-envelope"></i><span>Complaint</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           
@@ -500,13 +500,13 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="mybookings1.php">
-          <i class="bi bi-card-list"></i>
+          <i class="bi bi-cart"></i>
           <span>My Bookings</span>
         </a>
       </li><!-- End Register Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="userhistory.php">
-          <i class="bi bi-card-list"></i>
+          <i class="bi bi-cart-check"></i>
           <span>My History</span>
         </a>
       </li><!-- End Register Page Nav -->

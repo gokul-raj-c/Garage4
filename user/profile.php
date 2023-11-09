@@ -18,7 +18,7 @@ include("header.php");
       <h1>Profile</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="viewcar.php">Home</a></li>
           <li class="breadcrumb-item">Users</li>
           <li class="breadcrumb-item active">Profile</li>
         </ol>
@@ -32,7 +32,7 @@ include("header.php");
           <div class="card">
           <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-<img src="../uploads/profile/<?php echo $arr['image'] ?>" alt="Profile" class="rounded-circle" style="min-width:250px;">
+<img src="./uploads/profile/<?php echo $arr['image'] ?>" alt="Profile" class="rounded-circle" style="min-width:250px;">
 
 
 <h2 style="text-transform:capitalize;" style="margin-top:-50px">
@@ -133,11 +133,11 @@ include("header.php");
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form action="./php/profileupdate1.php" method="POST" >
+                  <form action="./php/profileupdate1.php" method="POST" enctype="multipart/form-data" >
                   <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="../uploads/profile/<?php echo $arr['image']; ?>"alt="Profile" class="rounded-circle">
+                        <img src="./uploads/profile/<?php echo $arr['image']; ?>"alt="Profile" class="rounded-circle">
                         <div class="pt-2">
                         <div class="file-field">  
                                 <input type="file" id="upbtn" name="uploadfile" value="" hidden/>
@@ -153,13 +153,13 @@ include("header.php");
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">First Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fname" type="text" class="form-control" id="fname" value=<?php echo $arr['first_name'];?>>
+                        <input name="fname" type="text" class="form-control" id="fname" value='<?php echo $arr['first_name'];?>'>
                       </div>
                     </div>
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Last Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="lname" type="text" class="form-control" id="lname" value=<?php echo $arr['last_name'];?>>
+                        <input name="lname" type="text" class="form-control" id="lname" value='<?php echo $arr['last_name'];?>'>
                       </div>
                     </div>
                     <div class="row mb-3">

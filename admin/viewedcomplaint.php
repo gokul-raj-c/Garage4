@@ -15,7 +15,7 @@ include("header.php");
       <h1>Complaints</h1>
       <nav>
         <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
+        <li class="breadcrumb-item"><a href="index1.php">Home</a></li>
           <li class="breadcrumb-item">Manage Complaints</a></li>
           <li class="breadcrumb-item active">Viewed Complaints</li>
         </ol>

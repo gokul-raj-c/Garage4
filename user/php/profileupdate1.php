@@ -31,7 +31,7 @@ if(isset($_POST["submit"])){
 
     $filename = $_FILES["uploadfile"]["name"];
     $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "../uploads/profile/" . $filename;
+    $folder = "../uploads/profile/".$filename;
     $delfolder = "../uploads/profile/".$selfpic;
 
     if($filename !=  null)

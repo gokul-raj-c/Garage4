@@ -10,7 +10,7 @@
 require '../../connect.php';
 session_start();
 $email=$_SESSION['email_id'];
-$eventid=$_POST['car_id'];
+$eventid=$_POST['eventid'];
 $rate=$_POST['rate'];
 $comment=$_POST['comment'];
 

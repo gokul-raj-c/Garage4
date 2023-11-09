@@ -17,7 +17,7 @@ $username = $_SESSION['email_id'];
       <h1>Cars</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="activeuser.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="index1.php">Home</a></li>
           <!--<li class="breadcrumb-item">Components</li>
           <li class="breadcrumb-item active">Cars</li>-->
         </ol>

@@ -468,7 +468,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-card-list"></i><span>Manage Complaints</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-envelope"></i><span>Manage Complaints</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -492,7 +492,7 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-card-list"></i><span>Cars</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-truck"></i><span>Cars</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -568,7 +568,7 @@ require("../connect.php");
       </li><!-- End Contact Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-navii" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-card-list"></i><span>Bookings</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-cart-check"></i><span>Bookings</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-navii" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -592,13 +592,13 @@ require("../connect.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="cardetails.php">
-          <i class="bi bi-card-list"></i>
+          <i class="bi bi-truck"></i>
           <span>Car Details</span>
         </a>
       </li><!-- End Register Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="service.php">
-          <i class="bi bi-card-list"></i>
+          <i class="bi bi-gear"></i>
           <span>Service</span>
         </a>
       </li><!-- End Register Page Nav -->
