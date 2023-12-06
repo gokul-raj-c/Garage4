@@ -33,7 +33,7 @@ $secondDate = DateTime::createFromFormat('Y-m-d', $ddate);
 if ($firstDate && $secondDate) {
     $interval = $firstDate->diff($secondDate);
     $daysDifference = $interval->days;
-    echo $daysDifference; // This will give you the difference in days
+    //echo $daysDifference; // This will give you the difference in days
 } else {
     echo "Invalid date format";
 }

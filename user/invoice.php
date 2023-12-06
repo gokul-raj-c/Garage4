@@ -339,7 +339,7 @@ $arr1=mysqli_fetch_assoc($res1);
          <!-- begin invoice-note -->
          <div class="invoice-footer"><h6>
             * Invoice was created on a computer and is valid without the signature and seal.<br>
-            * If you have any questions concerning this invoice, contact  [Name, Phone Number, Email]</h6>
+            * If you have any questions concerning this invoice, contact us.</h6>
          </div>
         <!-- <div class="invoice-note">
             *Invoice was created on a computer and is valid without the signature and seal.

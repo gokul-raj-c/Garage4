@@ -55,31 +55,37 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Name</label>
                   <div class="col-sm-10">
-                  <input name="carname" type="text" class="form-control" id="carname" value='<?php echo $arr['name'];?>'>
+                  <input name="carname" type="text" class="form-control" id="carname" hidden value='<?php echo $arr['name'];?>'>
+                  <input name="carnaame" type="text" class="form-control" id="carnaame" disabled value='<?php echo $arr['name'];?>'>
+
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Category</label>
                   <div class="col-sm-10">
-                  <input name="carcategory" type="text" class="form-control" id="carcategory" value=<?php echo $arr['category'];?>>
+                  <input name="carcategory" type="text" class="form-control" id="carcategory" hidden value=<?php echo $arr['category'];?>>
+                  <input name="carcaategory" type="text" class="form-control" id="carcaategory" disabled value=<?php echo $arr['category'];?>>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Color</label>
                   <div class="col-sm-10">
-                  <input name="carcolor" type="text" class="form-control" id="carcolor" value=<?php echo $arr['color'];?>>
+                  <input name="carcolor" type="text" class="form-control" id="carcolor" hidden value=<?php echo $arr['color'];?>>
+                  <input name="carcoolor" type="text" class="form-control" id="carcoolor" disabled value=<?php echo $arr['color'];?>>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Capacity</label>
                   <div class="col-sm-10">
-                  <input name="carcapacity" type="text" class="form-control" id="carcapacity" value=<?php echo $arr['capacity'];?>>
+                  <input name="carcapacity" type="text" class="form-control" id="carcapacity" hidden value=<?php echo $arr['capacity'];?>>
+                  <input name="carcaapacity" type="text" class="form-control" id="carcaapacity" disabled value=<?php echo $arr['capacity'];?>>
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Car Rate</label>
                   <div class="col-sm-10">
-                  <input name="carrate" type="text" class="form-control" id="carrate" value=<?php echo $arr['amount'];?>>
+                  <input name="carrate" type="text" class="form-control" id="carrate" hidden value=<?php echo $arr['amount'];?>>
+                  <input name="carraate" type="text" class="form-control" id="carraate" disabled value=<?php echo $arr['amount'];?>>
                   </div>
                 </div>
                 <!--<div class="row mb-3">
@@ -91,7 +97,8 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputEmail" class="col-sm-2 col-form-label">User Email</label>
                   <div class="col-sm-10">
-                  <input name="useremail" type="text" class="form-control" id="useremail" value= <?php echo $arr1['email_id'];?>>
+                  <input name="useremail" type="text" class="form-control" id="useremail" hidden value= <?php echo $arr1['email_id'];?>>
+                  <input name="useremmail" type="text" class="form-control" id="useremmail" disabled value= <?php echo $arr1['email_id'];?>>
                   </div>
                 </div>
                 <!--<div class="row mb-3">
@@ -103,13 +110,13 @@ $id=$_GET['id'];
                 <div class="row mb-3">
                   <label for="inputDate" class="col-sm-2 col-form-label">PicUp Date</label>
                   <div class="col-sm-10">
-                    <input type="date" class="form-control" name="pickupdate" id="picupdate">
+                    <input type="date" class="form-control" name="pickupdate" id="picupdate" required />
                   </div>
                 </div>
                 <div class="row mb-3">
                   <label for="inputDate" class="col-sm-2 col-form-label">Drop Date</label>
                   <div class="col-sm-10">
-                    <input type="date" class="form-control" name="dropdate" id="dropdate">
+                    <input type="date" class="form-control" name="dropdate" id="dropdate" required />
                   </div>
                 </div>
                 <!--<div class="row mb-3">
