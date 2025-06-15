@@ -35,5 +35,4 @@ The platform supports invoice generation in PDF format and sends booking confirm
 | JavaScript | Form validation, UI interactivity |
 | PHP        | Server-side logic                 |
 | MySQL      | Database management               |
-| TCPDF / FPDF| PDF invoice generation           |
 | PHPMailer  | Email booking confirmations       |
